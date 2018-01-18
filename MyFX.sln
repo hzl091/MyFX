@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.Repository", "MyFX.Rep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.Repository.Test", "MyFX.Repository.Test\MyFX.Repository.Test.csproj", "{292850E2-F0DE-4404-A357-CC49A1BCCC26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.Core", "MyFX.Core\MyFX.Core.csproj", "{08746B43-A5AD-406D-AB88-0F2D7FC8C722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{292850E2-F0DE-4404-A357-CC49A1BCCC26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{292850E2-F0DE-4404-A357-CC49A1BCCC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{292850E2-F0DE-4404-A357-CC49A1BCCC26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using MyFX.Repository.BaseModel;
 using MyFX.Repository.Domain;
+using MyFX.Core.DI;
 
 namespace MyFX.Repository.Reps
 {
@@ -12,7 +13,8 @@ namespace MyFX.Repository.Reps
     /// </summary>
     /// <typeparam name="TEntity">实体</typeparam>
     /// <typeparam name="TKey">实体标识</typeparam>
-    public interface IRepository<TEntity, in TKey> where TEntity : IAggregateRoot<TKey>
+    public interface IRepository<TEntity, in TKey> : IDependency 
+        where TEntity : IAggregateRoot<TKey>
     {
         /// <summary>
         /// 按主键查询实体对象

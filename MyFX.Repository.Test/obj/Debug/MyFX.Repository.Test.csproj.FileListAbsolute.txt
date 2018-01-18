@@ -12,3 +12,7 @@ E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\EntityFramework.SqlServer.xml
 E:\UnitOfWork\MyFX\MyFX.Repository.Test\obj\Debug\MyFX.Repository.Test.csprojResolveAssemblyReference.cache
 E:\UnitOfWork\MyFX\MyFX.Repository.Test\obj\Debug\MyFX.Repository.Test.dll
 E:\UnitOfWork\MyFX\MyFX.Repository.Test\obj\Debug\MyFX.Repository.Test.pdb
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\Autofac.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\MyFX.Core.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\Autofac.xml
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\MyFX.Core.pdb

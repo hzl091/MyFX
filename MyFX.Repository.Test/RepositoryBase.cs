@@ -20,7 +20,6 @@ namespace MyFX.Repository.Test
         where TEntity : EntityBase<TKey>, IAggregateRoot<TKey>
     {
         public RepositoryBase()
-            : base(new OracleDbContext())
         {
         }
     }

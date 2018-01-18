@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using MyFX.Core.DI;
 using MyFX.Repository.BaseModel;
 using MyFX.Repository.Domain;
 
@@ -18,13 +19,17 @@ namespace MyFX.Repository.Reps
     public abstract class EFRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity 
         : EntityBase<TKey>, IAggregateRoot<TKey>
     {
-        private readonly DbContext _dbContext = null;
-        private readonly DbSet<TEntity> _dbSet = null;
+        private DbContext _dbContext = null;
+        private DbSet<TEntity> _dbSet = null;
 
-        public EFRepository(DbContext dbContext)
+        /// <summary>
+        /// 工作单元
+        /// </summary>
+        /// <typeparam name="TUnitOfWork"></typeparam>
+        /// <returns></returns>
+        public TUnitOfWork GetCurrentUnitOfWork<TUnitOfWork>() where TUnitOfWork : IUnitOfWork
         {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
+            return (TUnitOfWork)UnitOfWork.Current;
         }
 
         /// <summary>
@@ -32,15 +37,15 @@ namespace MyFX.Repository.Reps
         /// </summary>
         public DbContext DbContext 
         {
-            get { return _dbContext;}
+            get { return _dbContext ?? (_dbContext = GetCurrentUnitOfWork<EFUnitOfWork>().Context); }
         }
 
         /// <summary>
         /// 当前实体类型集合
         /// </summary>
-        public IQueryable<TEntity> Rs
+        public DbSet<TEntity> Rs
         {
-            get { return _dbSet;}
+            get { return _dbSet ?? (_dbSet = this.DbContext.Set<TEntity>()); }
         }
 
         public TEntity GetByKey(TKey id)
@@ -195,7 +200,7 @@ namespace MyFX.Repository.Reps
 
         public void Add(TEntity entity)
         {
-            _dbSet.Add(entity);
+           Rs.Add(entity);
         }
 
         public void Delete(TKey id)
@@ -205,12 +210,12 @@ namespace MyFX.Repository.Reps
             {
                 throw new Exception(string.Format("id[{0}] not found", id));
             }
-            _dbSet.Remove(entity);
+            Rs.Remove(entity);
         }
 
         public void Delete(TEntity entity)
         {
-            _dbSet.Remove(entity);
+            Rs.Remove(entity);
         }
 
         public void Save()

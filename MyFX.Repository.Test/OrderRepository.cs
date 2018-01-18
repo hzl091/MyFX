@@ -14,7 +14,11 @@ using MyFX.Repository.Test.Domain;
 
 namespace MyFX.Repository.Test
 {
-    public class OrderRepository : RepositoryBase<Order, int>
+    public class OrderRepository : RepositoryBase<Order, int>, IOrderRepository
     {
+        public OrderRepository()
+        {
+            Console.WriteLine("OrderRepository");
+        }
     }
 }

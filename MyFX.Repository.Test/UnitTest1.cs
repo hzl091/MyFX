@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
+using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyFX.Core.DI;
 using MyFX.Repository.BaseModel;
+using MyFX.Repository.Reps;
 using MyFX.Repository.Test.Domain;
 
 namespace MyFX.Repository.Test
@@ -9,6 +12,15 @@ namespace MyFX.Repository.Test
     [TestClass]
     public class UnitTest1
     {
+        private IContainer GetContainer()
+        {
+            var dbContext = new OracleDbContext();
+            dbContext.Database.Log = Console.WriteLine;
+            var container = DIBootstrapper.Initialise("MyFX.Repository", "MyFX.Repository.Test");
+            EFUnitOfWorkFactory.SetObjectContext(() => dbContext);
+            return container;
+        }
+
         [TestMethod]
         public void GetOrders_Test()
         {
@@ -24,10 +36,12 @@ namespace MyFX.Repository.Test
         [TestMethod]
         public void AddOrders_Test()
         {
-            OrderRepository rep = new OrderRepository();
+            var ci = GetContainer();
+            var uow = ci.Resolve<IUnitOfWorkFactory>().Create();
+            IOrderRepository rep = ci.Resolve<IOrderRepository>();
             rep.Add(new Order()
             {
-               OrderNo = "66666588888",
+               OrderNo = "6999999999999",
                CustomerId = 9986755,
                OrderStatus = 80,
                OrderType = 10,
@@ -35,8 +49,26 @@ namespace MyFX.Repository.Test
                StoreOwnerId = 9900
             });
 
-            rep.Save();
+            uow.Commit();
         }
+
+        [TestMethod]
+        public void AddOrders_Test1()
+        {
+            var ci = GetContainer();
+            var orderService = ci.Resolve<IOrderService>();
+            var order = new Order()
+            {
+                OrderNo = "8800000000001",
+                CustomerId = 9986755,
+                OrderStatus = 80,
+                OrderType = 10,
+                StoreId = 7788,
+                StoreOwnerId = 9900
+            };
+            orderService.CreateOrder(order);
+        }
+
 
         [TestMethod]
         public void Orders_Test()
