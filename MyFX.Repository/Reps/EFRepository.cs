@@ -10,9 +10,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using MyFX.Core.BaseModel;
 using MyFX.Core.DI;
-using MyFX.Repository.BaseModel;
-using MyFX.Repository.Domain;
+using MyFX.Core.Domain;
 
 namespace MyFX.Repository.Reps
 {

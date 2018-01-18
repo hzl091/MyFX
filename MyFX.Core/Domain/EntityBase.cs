@@ -5,7 +5,7 @@
  * 创建说明：
 ****************************************************************************************/
 
-namespace MyFX.Repository.Domain
+namespace MyFX.Core.Domain
 {
     /// <summary>
     /// 实体基类

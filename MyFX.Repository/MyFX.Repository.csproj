@@ -57,12 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseModel\PageQuery.cs" />
-    <Compile Include="BaseModel\SortRule.cs" />
-    <Compile Include="Domain\AggregateRoot.cs" />
     <Compile Include="Reps\EFRepository.cs" />
-    <Compile Include="Domain\EntityBase.cs" />
-    <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Reps\EFUnitOfWork.cs" />
     <Compile Include="Reps\EFUnitOfWorkFactory.cs" />
     <Compile Include="Reps\IRepository.cs" />

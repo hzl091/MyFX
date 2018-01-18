@@ -5,16 +5,9 @@
  * 创建说明：
 ****************************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyFX.Repository.Domain;
-using MyFX.Repository.Test.Domain;
+using MyFX.Core.Domain;
 
-namespace MyFX.Repository.Test
+namespace MyFX.Repository.Test.DAL
 {
     public class RepositoryBase<TEntity,TKey> : Repository.Reps.EFRepository<TEntity, TKey>
         where TEntity : EntityBase<TKey>, IAggregateRoot<TKey>

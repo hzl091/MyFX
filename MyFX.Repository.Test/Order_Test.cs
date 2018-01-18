@@ -2,15 +2,17 @@
 using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyFX.Core.BaseModel;
 using MyFX.Core.DI;
-using MyFX.Repository.BaseModel;
 using MyFX.Repository.Reps;
+using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
+using MyFX.Repository.Test.Service;
 
 namespace MyFX.Repository.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class Order_Test
     {
         private IContainer GetContainer()
         {
@@ -59,7 +61,7 @@ namespace MyFX.Repository.Test
             var orderService = ci.Resolve<IOrderService>();
             var order = new Order()
             {
-                OrderNo = "8800000000001",
+                OrderNo = "8800000000001999",
                 CustomerId = 9986755,
                 OrderStatus = 80,
                 OrderType = 10,

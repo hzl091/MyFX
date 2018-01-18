@@ -9,7 +9,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using MyFX.Repository.Test.Domain;
 
-namespace MyFX.Repository.Test
+namespace MyFX.Repository.Test.DAL
 {
     public class OracleDbContext : DbContext
     {

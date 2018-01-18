@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using MyFX.Repository.BaseModel;
-using MyFX.Repository.Domain;
+using MyFX.Core.BaseModel;
 using MyFX.Core.DI;
+using MyFX.Core.Domain;
 
 namespace MyFX.Repository.Reps
 {

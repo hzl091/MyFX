@@ -5,13 +5,7 @@
  * 创建说明：
 ****************************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyFX.Repository.BaseModel
+namespace MyFX.Core.BaseModel
 {
     /// <summary>
     /// 分页查询条件

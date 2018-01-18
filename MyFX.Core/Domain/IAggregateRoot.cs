@@ -1,4 +1,4 @@
-﻿namespace MyFX.Repository.Domain
+﻿namespace MyFX.Core.Domain
 {
     public interface IAggregateRoot<TKey>
     {

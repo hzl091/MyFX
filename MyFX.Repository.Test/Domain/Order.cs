@@ -6,7 +6,7 @@
 ****************************************************************************************/
 
 using System;
-using MyFX.Repository.Domain;
+using MyFX.Core.Domain;
 
 namespace MyFX.Repository.Test.Domain
 {

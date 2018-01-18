@@ -5,15 +5,11 @@
  * 创建说明：
 ****************************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MyFX.Repository.Reps;
+using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
 
-namespace MyFX.Repository.Test
+namespace MyFX.Repository.Test.Service
 {
     public class OrderService : IOrderService
     {

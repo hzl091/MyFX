@@ -47,9 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseModel\PageQuery.cs" />
+    <Compile Include="BaseModel\SortRule.cs" />
     <Compile Include="DI\DIBootstrapper.cs" />
     <Compile Include="DI\DIContainer.cs" />
     <Compile Include="DI\IDependency.cs" />
+    <Compile Include="Domain\AggregateRoot.cs" />
+    <Compile Include="Domain\EntityBase.cs" />
+    <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

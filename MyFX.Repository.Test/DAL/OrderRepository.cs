@@ -6,13 +6,9 @@
 ****************************************************************************************/
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MyFX.Repository.Test.Domain;
 
-namespace MyFX.Repository.Test
+namespace MyFX.Repository.Test.DAL
 {
     public class OrderRepository : RepositoryBase<Order, int>, IOrderRepository
     {

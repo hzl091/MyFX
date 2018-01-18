@@ -80,13 +80,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Domain\Order.cs" />
-    <Compile Include="IOrderRepository.cs" />
-    <Compile Include="IOrderService.cs" />
-    <Compile Include="OracleDbContext.cs" />
-    <Compile Include="OrderRepository.cs" />
-    <Compile Include="OrderService.cs" />
-    <Compile Include="RepositoryBase.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="DAL\IOrderRepository.cs" />
+    <Compile Include="Service\IOrderService.cs" />
+    <Compile Include="DAL\OracleDbContext.cs" />
+    <Compile Include="DAL\OrderRepository.cs" />
+    <Compile Include="Service\OrderService.cs" />
+    <Compile Include="DAL\RepositoryBase.cs" />
+    <Compile Include="Order_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
