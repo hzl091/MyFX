@@ -11,10 +11,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using MyFX.Core.BaseModel;
-using MyFX.Core.DI;
 using MyFX.Core.Domain;
+using MyFX.Core.Repository;
 
-namespace MyFX.Repository.Reps
+namespace MyFX.Repository
 {
     public abstract class EFRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity 
         : EntityBase<TKey>, IAggregateRoot<TKey>

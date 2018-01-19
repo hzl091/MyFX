@@ -1,5 +1,5 @@
 ﻿using MyFX.Core.DI;
-using MyFX.Repository.Reps;
+using MyFX.Core.Repository;
 using MyFX.Repository.Test.Domain;
 
 namespace MyFX.Repository.Test.DAL

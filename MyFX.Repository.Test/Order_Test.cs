@@ -4,7 +4,7 @@ using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyFX.Core.BaseModel;
 using MyFX.Core.DI;
-using MyFX.Repository.Reps;
+using MyFX.Core.Repository;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
 using MyFX.Repository.Test.Service;
@@ -61,7 +61,7 @@ namespace MyFX.Repository.Test
             var orderService = ci.Resolve<IOrderService>();
             var order = new Order()
             {
-                OrderNo = "8800000000001999",
+                OrderNo = "8800000000234234",
                 CustomerId = 9986755,
                 OrderStatus = 80,
                 OrderType = 10,

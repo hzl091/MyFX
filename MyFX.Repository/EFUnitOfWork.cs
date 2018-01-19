@@ -6,13 +6,10 @@
 ****************************************************************************************/
 
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MyFX.Core.Repository;
 
-namespace MyFX.Repository.Reps
+namespace MyFX.Repository
 {
     /// <summary>
     /// 基于EF的工作单元

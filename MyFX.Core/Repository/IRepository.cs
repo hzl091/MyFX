@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using MyFX.Core.BaseModel;
 using MyFX.Core.DI;
 using MyFX.Core.Domain;
 
-namespace MyFX.Repository.Reps
+namespace MyFX.Core.Repository
 {
     /// <summary>
     /// 仓储接口定义

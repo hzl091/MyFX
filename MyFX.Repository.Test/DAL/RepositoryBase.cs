@@ -9,7 +9,7 @@ using MyFX.Core.Domain;
 
 namespace MyFX.Repository.Test.DAL
 {
-    public class RepositoryBase<TEntity,TKey> : Repository.Reps.EFRepository<TEntity, TKey>
+    public class RepositoryBase<TEntity,TKey> : EFRepository<TEntity, TKey>
         where TEntity : EntityBase<TKey>, IAggregateRoot<TKey>
     {
         public RepositoryBase()

@@ -5,7 +5,7 @@
  * 创建说明：
 ****************************************************************************************/
 
-using MyFX.Repository.Reps;
+using MyFX.Core.Repository;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
 
@@ -25,6 +25,7 @@ namespace MyFX.Repository.Test.Service
         public void CreateOrder(Order order)
         {
             _orderRes.Add(order);
+            order.StoreId = 7878789;
             _uow.Commit();
         }
     }
