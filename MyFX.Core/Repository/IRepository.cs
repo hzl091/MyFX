@@ -12,7 +12,7 @@ namespace MyFX.Core.Repository
     /// </summary>
     /// <typeparam name="TEntity">实体</typeparam>
     /// <typeparam name="TKey">实体标识</typeparam>
-    public interface IRepository<TEntity, in TKey> : IDependency 
+    public interface IRepository<TEntity, in TKey>
         where TEntity : IAggregateRoot<TKey>
     {
         /// <summary>

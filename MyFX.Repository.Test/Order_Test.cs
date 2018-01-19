@@ -16,11 +16,8 @@ namespace MyFX.Repository.Test
     {
         private IContainer GetContainer()
         {
-            var dbContext = new OracleDbContext();
-            dbContext.Database.Log = Console.WriteLine;
-            var container = DIBootstrapper.Initialise("MyFX.Repository", "MyFX.Repository.Test");
-            EFUnitOfWorkFactory.SetObjectContext(() => dbContext);
-            return container;
+            Bootstrapper.Current.Start();
+            return Bootstrapper.Current.Container;
         }
 
         [TestMethod]
@@ -61,7 +58,7 @@ namespace MyFX.Repository.Test
             var orderService = ci.Resolve<IOrderService>();
             var order = new Order()
             {
-                OrderNo = "8800000000234234",
+                OrderNo = "11122233344455888",
                 CustomerId = 9986755,
                 OrderStatus = 80,
                 OrderType = 10,
@@ -75,7 +72,8 @@ namespace MyFX.Repository.Test
         [TestMethod]
         public void Orders_Test()
         {
-            OrderRepository rep = new OrderRepository();
+            var ci = GetContainer();
+            IOrderRepository rep = ci.Resolve<IOrderRepository>();
             bool isExists = rep.Exists(o => o.OrderNo.Equals("66666588888"));
             Console.WriteLine(isExists);
 
@@ -98,7 +96,8 @@ namespace MyFX.Repository.Test
         [TestMethod]
         public void Orders_Test1()
         {
-            OrderRepository rep = new OrderRepository();
+            var ci = GetContainer();
+            IOrderRepository rep = ci.Resolve<IOrderRepository>();
             bool isExists = rep.Exists(o => o.OrderNo.Equals("66666588888"));
             Console.WriteLine(isExists);
             int total = 0;

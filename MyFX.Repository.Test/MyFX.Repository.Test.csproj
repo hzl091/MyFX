@@ -79,6 +79,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="DAL\IOrderRepository.cs" />
     <Compile Include="Service\IOrderService.cs" />
