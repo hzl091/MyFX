@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.Repository.Test", "MyF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.Core", "MyFX.Core\MyFX.Core.csproj", "{08746B43-A5AD-406D-AB88-0F2D7FC8C722}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.FluentValidation.Extension", "MyFX.FluentValidation.Extension\MyFX.FluentValidation.Extension.csproj", "{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08746B43-A5AD-406D-AB88-0F2D7FC8C722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

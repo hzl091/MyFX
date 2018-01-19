@@ -11,7 +11,7 @@ namespace MyFX.Core.Domain
     /// 实体基类
     /// </summary>
     /// <typeparam name="TKey">标识</typeparam>
-    public abstract class EntityBase<TKey>
+    public abstract class EntityBase<TKey> : DomainBase
     {
         /// <summary>
         /// 主键Id

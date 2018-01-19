@@ -1,0 +1,11 @@
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\MyFX.FluentValidation.Extension.dll
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\MyFX.FluentValidation.Extension.pdb
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\FluentValidation.dll
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\MyFX.Core.dll
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\Autofac.dll
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\MyFX.Core.pdb
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\FluentValidation.xml
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\Autofac.xml
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\obj\Debug\MyFX.FluentValidation.Extension.csprojResolveAssemblyReference.cache
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\obj\Debug\MyFX.FluentValidation.Extension.dll
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\obj\Debug\MyFX.FluentValidation.Extension.pdb

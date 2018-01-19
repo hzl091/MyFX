@@ -53,12 +53,16 @@
     <Compile Include="DI\DIContainer.cs" />
     <Compile Include="DI\IDependency.cs" />
     <Compile Include="Domain\AggregateRoot.cs" />
+    <Compile Include="Domain\DomainBase.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\IUnitOfWorkFactory.cs" />
+    <Compile Include="Validations\IValidator.cs" />
+    <Compile Include="Validations\ValidateResult.cs" />
+    <Compile Include="Validations\ValidateResults.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
