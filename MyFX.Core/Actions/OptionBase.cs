@@ -11,8 +11,8 @@ namespace MyFX.Core.Actions
     /// 操作基类
     /// </summary>
     /// <typeparam name="TRequest">请求类型</typeparam>
-    /// <typeparam name="TResponse">响应类型</typeparam>
-    public abstract class OptionBase<TRequest, TResponse>
+    /// <typeparam name="TResultObject">响应类型</typeparam>
+    public abstract class OptionBase<TRequest, TResultObject>
     {
         /// <summary>
         /// 构造函数
@@ -31,12 +31,12 @@ namespace MyFX.Core.Actions
         /// <summary>
         /// 响应对象
         /// </summary>
-        public TResponse Response { get; set; }
+        public TResultObject ResultObject { get; set; }
 
         /// <summary>
         /// 执行
         /// </summary>
-        /// <param name="throwException">是否抛出异常</param>
-        public abstract TResponse DoExecute(bool throwException = false);
+        /// <param name="throwException">发生错误时，是否以抛异常的方式提示调用者</param>
+        public abstract TResultObject DoExecute(bool throwException = false);
     }
 }

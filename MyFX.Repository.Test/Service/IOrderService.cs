@@ -7,11 +7,17 @@
 
 using MyFX.Core.DI;
 using MyFX.Repository.Test.Domain;
+using MyFX.Repository.Test.Dtos.Request;
+using MyFX.Repository.Test.Dtos.Response;
 
 namespace MyFX.Repository.Test.Service
 {
     public interface IOrderService : IDependency
     {
         void CreateOrder(Order order);
+
+        GetOrderResult GetOrder(GetOrderRequest request);
+
+        FindOrdersResult FindOrders(FindOrdersRequest request);
     }
 }

@@ -1,6 +1,6 @@
 ﻿/****************************************************************************************
  * 文件名：ServiceOptionBase
- * 作者：黄泽林
+ * 作者：huangzl
  * 创始时间：2017/10/24 14:39:05
  * 创建说明：
 ****************************************************************************************/
@@ -8,6 +8,7 @@
 using System;
 using MyFX.Core.Base;
 using MyFX.Core.BaseModel;
+using MyFX.Core.BaseModel.Request;
 using MyFX.Core.BaseModel.Result;
 using MyFX.Core.Exceptions;
 using MyFX.Core.Validations;
@@ -18,10 +19,10 @@ namespace MyFX.Core.Actions
     /// 服务操作基类
     /// </summary>
     /// <typeparam name="TRequest">请求类型</typeparam>
-    /// <typeparam name="TResponse">响应类型</typeparam>
-    public abstract class ServiceOptionBase<TRequest, TResponse> : OptionBase<TRequest, TResponse>
+    /// <typeparam name="TResultObject">响应类型</typeparam>
+    public abstract class ServiceOptionBase<TRequest, TResultObject> : OptionBase<TRequest, TResultObject>
         where TRequest : IRequest
-        where TResponse : ResultObject, new()
+        where TResultObject : IResultObject, new()
     {
         private IValidator _validator;
 
@@ -40,14 +41,14 @@ namespace MyFX.Core.Actions
         /// </summary>
         /// <param name="throwException">是否抛异常，默认为false</param>
         /// <returns></returns>
-        public override TResponse DoExecute(bool throwException = false)
+        public override TResultObject DoExecute(bool throwException = false)
         {
             try
             {
                 if (Request == null){ throw new MyFXException("Request不能为空"); }
                 this.DoValidate();
-                Response = this.Execute();
-                if (Response == null) { throw new MyFXException("Response不能为空"); }
+                ResultObject = this.Execute();
+                if (ResultObject == null) { throw new MyFXException("ResultObject不能为空"); }
             }
             catch (Exception ex)
             {
@@ -55,30 +56,32 @@ namespace MyFX.Core.Actions
                 //记录内部异常日志
                 if (ex.InnerException != null){ Log(ex.InnerException); }
                 if (throwException) { throw; }//根据需求抛出异常
-                if (Response == null){ Response = new TResponse(); }
+                if (ResultObject == null) { ResultObject = new TResultObject(); }
 
-                var xfcEx = ex as MyFXException;
-                if (xfcEx != null)
+                var myFxEx = ex as MyFXException;
+                if (myFxEx != null)
                 {
-                    if (!string.IsNullOrEmpty(xfcEx.Code))
+                    if (!string.IsNullOrEmpty(myFxEx.Code))
                     {
-                        Response.BuildResultObject(xfcEx.Code.ToInt(), xfcEx.Message);
-                        if (xfcEx.Data.Count > 0)
+                        ResultObject.isOk = false;
+                        ResultObject.retStatus = myFxEx.Code.ToInt();
+                        ResultObject.retMsg = myFxEx.Message;
+                        if (myFxEx.Data.Count > 0)
                         {
-                            Response.retErrorBody = xfcEx.Data;
+                            ResultObject.retErrorBody = myFxEx.Data;
                         }
                     }
                     else
                     {
-                        Response.ServerException(ex);
+                        ResultObject.ServerException(ex);
                     } 
                 }
                 else
                 {
-                    Response.ServerException(ex);
+                    ResultObject.ServerException(ex);
                 }
             }
-            return this.Response;
+            return this.ResultObject;
         }
 
         /// <summary>
@@ -102,7 +105,7 @@ namespace MyFX.Core.Actions
         /// <summary>
         /// 执行具体业务操作
         /// </summary>
-        protected abstract TResponse Execute();
+        protected abstract TResultObject Execute();
 
         /// <summary>
         /// 记录异常日志信息

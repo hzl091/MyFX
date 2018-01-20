@@ -5,6 +5,7 @@
  * 创建说明：
 ****************************************************************************************/
 
+using System;
 using System.Collections.Generic;
 
 namespace MyFX.Core.BaseModel.Result
@@ -12,6 +13,7 @@ namespace MyFX.Core.BaseModel.Result
     /// <summary>
     /// /批量操作结果
     /// </summary>
+    [Serializable]
     public class BatchResultObject : ResultObject
     {
         /// <summary>

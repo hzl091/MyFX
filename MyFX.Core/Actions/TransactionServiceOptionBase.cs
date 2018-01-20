@@ -7,6 +7,7 @@
 
 using System.Transactions;
 using MyFX.Core.BaseModel;
+using MyFX.Core.BaseModel.Request;
 using MyFX.Core.BaseModel.Result;
 
 namespace MyFX.Core.Actions
@@ -14,11 +15,11 @@ namespace MyFX.Core.Actions
     /// <summary>
     /// 支持分布式事务的服务操作基类
     /// </summary>
-    /// <typeparam name="TRequest"></typeparam>
-    /// <typeparam name="TResponse"></typeparam>
-    public abstract class TransactionServiceOptionBase<TRequest, TResponse> : ServiceOptionBase<TRequest, TResponse>
+    /// <typeparam name="TRequest">请求类型</typeparam>
+    /// <typeparam name="TResultObject">响应类型</typeparam>
+    public abstract class TransactionServiceOptionBase<TRequest, TResultObject> : ServiceOptionBase<TRequest, TResultObject>
         where TRequest : IRequest
-        where TResponse : ResultObject, new()
+        where TResultObject : IResultObject, new()
     {
         /// <summary>
         /// 构造函数
@@ -29,11 +30,11 @@ namespace MyFX.Core.Actions
         {
         }
 
-        public override TResponse DoExecute(bool throwException = false)
+        public override TResultObject DoExecute(bool throwException = false)
         {
             using (var trans = new TransactionScope())
             {
-                TResponse res = base.DoExecute(throwException);
+                TResultObject res = base.DoExecute(throwException);
                 if (res.isOk) { trans.Complete(); }
                 return res;
             }           

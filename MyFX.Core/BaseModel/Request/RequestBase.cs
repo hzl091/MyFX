@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MyFX.Core.BaseModel
+﻿namespace MyFX.Core.BaseModel.Request
 {
     /// <summary>
     /// 请求基类

@@ -8,6 +8,7 @@ using MyFX.Core.DI;
 using MyFX.Core.Repository;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
+using MyFX.Repository.Test.Dtos.Request;
 using MyFX.Repository.Test.Service;
 
 namespace MyFX.Repository.Test
@@ -110,6 +111,32 @@ namespace MyFX.Repository.Test
                 Console.WriteLine(order.OrderNo);
             }
             Console.WriteLine("total:" + total);
+        }
+
+
+        [TestMethod]
+        public void Service_GetOrder_Test1()
+        {
+            var ci = GetContainer();
+            var orderService = ci.Resolve<IOrderService>();
+
+            var rs = orderService.GetOrder(new GetOrderRequest() { OrderNo = "66666588888" });
+            Console.WriteLine(rs.retBody.CustomerId); 
+        }
+
+        [TestMethod]
+        public void Service_FindOrders_Test1()
+        {
+            var ci = GetContainer();
+            var orderService = ci.Resolve<IOrderService>();
+
+            var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 2, PageSize = 2});
+            var orders = rs.retBody.Rows;
+            foreach (var order in orders)
+            {
+                Console.WriteLine(order.OrderNo);
+            }
+            Console.WriteLine("total:" + rs.retBody.TotalCount);
         }
     }
 }

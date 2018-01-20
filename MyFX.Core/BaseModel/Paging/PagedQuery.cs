@@ -15,6 +15,16 @@ namespace MyFX.Core.BaseModel.Paging
     [Serializable]
     public class PagedQuery
     {
+        public PagedQuery()
+        {
+
+        }
+
+        public PagedQuery(int pageIndex, int pageSize)
+        {
+            PageIndex = pageIndex;
+            PageSize = pageSize;
+        }
         /// <summary>
         /// 当前页码
         /// </summary>

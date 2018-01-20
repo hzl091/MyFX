@@ -82,6 +82,10 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="DAL\IOrderRepository.cs" />
+    <Compile Include="Dtos\Request\FindOrdersRequest.cs" />
+    <Compile Include="Dtos\Request\GetOrderRequest.cs" />
+    <Compile Include="Dtos\Response\FindOrdersResult.cs" />
+    <Compile Include="Dtos\Response\GetOrderResult.cs" />
     <Compile Include="Service\IOrderService.cs" />
     <Compile Include="DAL\OracleDbContext.cs" />
     <Compile Include="DAL\OrderRepository.cs" />

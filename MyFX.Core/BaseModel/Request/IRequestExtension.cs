@@ -10,7 +10,7 @@ using System.Linq;
 using MyFX.Core.BaseModel.Result;
 using MyFX.Core.Validations;
 
-namespace MyFX.Core.BaseModel
+namespace MyFX.Core.BaseModel.Request
 {
     /// <summary>
     /// IRequest扩展
