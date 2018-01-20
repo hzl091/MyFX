@@ -41,6 +41,7 @@
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\OptionBase.cs" />
+    <Compile Include="Actions\ServiceOptionBase.cs" />
+    <Compile Include="Actions\TransactionServiceOptionBase.cs" />
+    <Compile Include="BaseModel\PageRequestBase.cs" />
+    <Compile Include="BaseModel\Result\BatchResultObject.cs" />
+    <Compile Include="BaseModel\IRequest.cs" />
+    <Compile Include="BaseModel\IRequestExtension.cs" />
+    <Compile Include="BaseModel\IResponse.cs" />
     <Compile Include="BaseModel\Paging\PagedQuery.cs" />
     <Compile Include="BaseModel\Paging\IPaged.cs" />
     <Compile Include="BaseModel\Paging\IPagedList.cs" />
     <Compile Include="BaseModel\Paging\PagedBase.cs" />
     <Compile Include="BaseModel\Paging\PagedList.cs" />
+    <Compile Include="BaseModel\RequestBase.cs" />
+    <Compile Include="BaseModel\ResponseBase.cs" />
+    <Compile Include="BaseModel\Result\ResultObject.cs" />
+    <Compile Include="BaseModel\Result\ResultObjectCodes.cs" />
+    <Compile Include="BaseModel\Result\ResultObjectExtension.cs" />
+    <Compile Include="BaseModel\Result\ResultObject`.cs" />
     <Compile Include="BaseModel\SortRule.cs" />
     <Compile Include="Base\ConfigManager.cs" />
     <Compile Include="Base\DateTimeExtension.cs" />
@@ -71,6 +86,15 @@
     <Compile Include="Domain\DomainBase.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="Exceptions\AppServiceException.cs" />
+    <Compile Include="Exceptions\DomainException.cs" />
+    <Compile Include="Exceptions\MessageException.cs" />
+    <Compile Include="Exceptions\NoPermissionException.cs" />
+    <Compile Include="Exceptions\PresentationException.cs" />
+    <Compile Include="Exceptions\RepositoryException.cs" />
+    <Compile Include="Exceptions\UIException.cs" />
+    <Compile Include="Exceptions\ValidationException.cs" />
+    <Compile Include="Exceptions\MyFXException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />

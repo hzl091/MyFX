@@ -4,4 +4,3 @@ E:\UnitOfWork\MyFX\MyFX.Core\bin\Debug\Autofac.dll
 E:\UnitOfWork\MyFX\MyFX.Core\bin\Debug\Autofac.xml
 E:\UnitOfWork\MyFX\MyFX.Core\obj\Debug\MyFX.Core.dll
 E:\UnitOfWork\MyFX\MyFX.Core\obj\Debug\MyFX.Core.pdb
-E:\UnitOfWork\MyFX\MyFX.Core\obj\Debug\MyFX.Core.csprojResolveAssemblyReference.cache
