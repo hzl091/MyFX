@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.Core", "MyFX.Core\MyFX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFX.FluentValidation.Extension", "MyFX.FluentValidation.Extension\MyFX.FluentValidation.Extension.csproj", "{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Core", "0-Core", "{496D3CE7-0968-4577-B5CE-456846474B58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Test", "1-Test", "{4F5C006C-F168-4F6B-AFFE-A4A03D2145B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67A395F3-F4CB-4D60-818A-C197AFC3319F} = {496D3CE7-0968-4577-B5CE-456846474B58}
+		{292850E2-F0DE-4404-A357-CC49A1BCCC26} = {4F5C006C-F168-4F6B-AFFE-A4A03D2145B1}
+		{08746B43-A5AD-406D-AB88-0F2D7FC8C722} = {496D3CE7-0968-4577-B5CE-456846474B58}
+		{4AFF08CE-1FD2-4F2F-82B9-264D4D555526} = {496D3CE7-0968-4577-B5CE-456846474B58}
 	EndGlobalSection
 EndGlobal
