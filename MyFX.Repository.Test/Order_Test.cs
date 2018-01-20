@@ -3,6 +3,7 @@ using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyFX.Core.BaseModel;
+using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.DI;
 using MyFX.Core.Repository;
 using MyFX.Repository.Test.DAL;
@@ -85,7 +86,8 @@ namespace MyFX.Repository.Test
                 IsDesc = false
             };
 
-            var orders = rep.FindPageList(new PageQuery(){PageIndex = 2, PageSize = 2}, out total, null, sorts);
+            var pagedList = rep.FindPageList(new PagedQuery() { PageIndex = 2, PageSize = 2 }, null, sorts);
+            var orders = pagedList.Rows;
             foreach (var order in orders)
             {
                 Console.WriteLine(order.OrderNo);
@@ -101,7 +103,8 @@ namespace MyFX.Repository.Test
             bool isExists = rep.Exists(o => o.OrderNo.Equals("66666588888"));
             Console.WriteLine(isExists);
             int total = 0;
-            var orders = rep.FindPageList(new PageQuery() { PageIndex = 2, PageSize = 2 }, out total, null, o =>o.OrderNo);
+            var pagedList = rep.FindPageList(new PagedQuery() { PageIndex = 2, PageSize = 2 }, null, o =>o.OrderNo);
+            var orders = pagedList.Rows;
             foreach (var order in orders)
             {
                 Console.WriteLine(order.OrderNo);

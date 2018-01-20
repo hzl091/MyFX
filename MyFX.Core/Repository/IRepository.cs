@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using MyFX.Core.BaseModel;
+using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.DI;
 using MyFX.Core.Domain;
 
@@ -63,25 +64,22 @@ namespace MyFX.Core.Repository
         /// <summary>
         /// 支持单个排序条件分页的实体对象集合查询
         /// </summary>
-        /// <param name="pageQuery"></param>
+        /// <param name="pagedQuery"></param>
         /// <param name="totalRecord"></param>
         /// <param name="where"></param>
         /// <param name="orderBy"></param>
         /// <param name="isAsc"></param>
         /// <returns></returns>
-        IEnumerable<TEntity> FindPageList(PageQuery pageQuery, out int totalRecord,
-            Expression<Func<TEntity, bool>> @where, Expression<Func<TEntity, object>> orderBy,
-            bool isAsc = true);
+        IPagedList<TEntity> FindPageList(PagedQuery pagedQuery, Expression<Func<TEntity, bool>> @where, Expression<Func<TEntity, object>> orderBy, bool isAsc = true);
 
         /// <summary>
         /// 支持多个排序条件分页的实体对象集合查询
         /// </summary>
-        /// <param name="pageQuery"></param>
-        /// <param name="totalRecord">总记录数</param>
+        /// <param name="pagedQuery"></param>
         /// <param name="where">条件</param>
         /// <param name="sortRules">排序规则</param>
         /// <returns></returns>
-        IEnumerable<TEntity> FindPageList(PageQuery pageQuery, out int totalRecord, Expression<Func<TEntity, bool>> where, SortRule[] sortRules);
+        IPagedList<TEntity> FindPageList(PagedQuery pagedQuery, Expression<Func<TEntity, bool>> where, SortRule[] sortRules);
 
         /// <summary>
         /// 判断实体对象是否存在

@@ -48,7 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseModel\PageQuery.cs" />
+    <Compile Include="BaseModel\Paging\PagedQuery.cs" />
+    <Compile Include="BaseModel\Paging\IPaged.cs" />
+    <Compile Include="BaseModel\Paging\IPagedList.cs" />
+    <Compile Include="BaseModel\Paging\PagedBase.cs" />
+    <Compile Include="BaseModel\Paging\PagedList.cs" />
     <Compile Include="BaseModel\SortRule.cs" />
     <Compile Include="Base\ConfigManager.cs" />
     <Compile Include="Base\DateTimeExtension.cs" />

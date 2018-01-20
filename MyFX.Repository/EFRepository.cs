@@ -11,6 +11,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using MyFX.Core.BaseModel;
+using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.Domain;
 using MyFX.Core.Repository;
 
@@ -145,12 +146,12 @@ namespace MyFX.Repository
             return queryObj.ToList();
         }
 
-        public IEnumerable<TEntity> FindPageList(PageQuery pageQuery, out int totalRecord, Expression<Func<TEntity, bool>> @where, Expression<Func<TEntity, object>> orderBy,
+        public IPagedList<TEntity> FindPageList(PagedQuery pagedQuery, Expression<Func<TEntity, bool>> @where, Expression<Func<TEntity, object>> orderBy,
             bool isAsc = true)
         {
-            if (pageQuery == null)
+            if (pagedQuery == null)
             {
-                throw new ArgumentNullException("pageQuery");
+                throw new ArgumentNullException("pagedQuery");
             }
 
             if (orderBy == null)
@@ -166,15 +167,16 @@ namespace MyFX.Repository
 
             queryObj = isAsc ? queryObj.OrderBy(orderBy)
                 : queryObj.OrderByDescending(orderBy);
-            totalRecord = queryObj.Count();//获取总记录数
-            return queryObj.Skip((pageQuery.PageIndex - 1) * pageQuery.PageSize).Take(pageQuery.PageSize).ToList();//获取分页
+            int totalRecord = queryObj.Count();//获取总记录数
+            var rows = queryObj.Skip((pagedQuery.PageIndex - 1) * pagedQuery.PageSize).Take(pagedQuery.PageSize).ToList();//获取分页
+            return new PagedList<TEntity>(rows, pagedQuery, totalRecord);
         }
 
-        public IEnumerable<TEntity> FindPageList(PageQuery pageQuery, out int totalRecord, Expression<Func<TEntity, bool>> @where, SortRule[] sortRules)
+        public IPagedList<TEntity> FindPageList(PagedQuery pagedQuery, Expression<Func<TEntity, bool>> @where, SortRule[] sortRules)
         {
-            if (pageQuery == null)
+            if (pagedQuery == null)
             {
-                throw new ArgumentNullException("pageQuery");
+                throw new ArgumentNullException("pagedQuery");
             }
 
             if (sortRules == null || !sortRules.Any())
@@ -189,8 +191,9 @@ namespace MyFX.Repository
             }
 
             queryObj = this.AttachSortRule(queryObj, sortRules);
-            totalRecord = queryObj.Count();//获取总记录数
-            return queryObj.Skip((pageQuery.PageIndex - 1) * pageQuery.PageSize).Take(pageQuery.PageSize).ToList();//获取分页
+            int totalRecord = queryObj.Count();//获取总记录数
+            var rows = queryObj.Skip((pagedQuery.PageIndex - 1) * pagedQuery.PageSize).Take(pagedQuery.PageSize).ToList();//获取分页
+            return new PagedList<TEntity>(rows, pagedQuery, totalRecord);
         }
 
         public bool Exists(Expression<Func<TEntity, bool>> @where)
