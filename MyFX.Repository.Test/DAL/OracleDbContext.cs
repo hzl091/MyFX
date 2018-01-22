@@ -7,11 +7,12 @@
 
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using MyFX.Repository.Ef;
 using MyFX.Repository.Test.Domain;
 
 namespace MyFX.Repository.Test.DAL
 {
-    public class OracleDbContext : DbContext
+    public class OracleDbContext : DbContextBase
     {
         /// <summary>
         /// OracleDbContext
@@ -30,6 +31,8 @@ namespace MyFX.Repository.Test.DAL
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.HasDefaultSchema("ITEM");
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<DatabaseGeneratedAttributeConvention>();

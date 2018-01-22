@@ -86,6 +86,7 @@
     <Compile Include="Dtos\Request\GetOrderRequest.cs" />
     <Compile Include="Dtos\Response\FindOrdersResult.cs" />
     <Compile Include="Dtos\Response\GetOrderResult.cs" />
+    <Compile Include="Service\Core\FindOrdersCore.cs" />
     <Compile Include="Service\IOrderService.cs" />
     <Compile Include="DAL\OracleDbContext.cs" />
     <Compile Include="DAL\OrderRepository.cs" />
@@ -99,13 +100,20 @@
       <Project>{08746b43-a5ad-406d-ab88-0f2d7fc8c722}</Project>
       <Name>MyFX.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyFX.Repository\MyFX.Repository.csproj">
+    <ProjectReference Include="..\MyFX.Log.Log4Net\MyFX.Log.Log4Net.csproj">
+      <Project>{01435fb6-277b-4fcb-9778-83b0c3e71f9a}</Project>
+      <Name>MyFX.Log.Log4Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyFX.Repository.Ef\MyFX.Repository.Ef.csproj">
       <Project>{67a395f3-f4cb-4d60-818a-c197afc3319f}</Project>
-      <Name>MyFX.Repository</Name>
+      <Name>MyFX.Repository.Ef</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Config\Log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

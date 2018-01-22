@@ -7,6 +7,7 @@
 
 using System;
 using MyFX.Core.Domain;
+using MyFX.Core.Domain.Entities;
 
 namespace MyFX.Repository.Test.Domain
 {

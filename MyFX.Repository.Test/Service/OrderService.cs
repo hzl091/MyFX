@@ -6,11 +6,12 @@
 ****************************************************************************************/
 
 using MyFX.Core.BaseModel.Paging;
-using MyFX.Core.Repository;
+using MyFX.Core.Domain.Uow;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
 using MyFX.Repository.Test.Dtos.Request;
 using MyFX.Repository.Test.Dtos.Response;
+using MyFX.Repository.Test.Service.Core;
 
 namespace MyFX.Repository.Test.Service
 {
@@ -43,12 +44,8 @@ namespace MyFX.Repository.Test.Service
 
         public FindOrdersResult FindOrders(FindOrdersRequest request)
         {
-            var pagedQuery = new PagedQuery(request.PageIndex, request.PageSize);
-            var pageOrders = _orderRepository.FindPageList(pagedQuery, null, o => o.OrderNo, false);
-            FindOrdersResult rs = new FindOrdersResult();
-            rs.retBody = pageOrders;
-
-            return rs;
+            var core = new FindOrdersCore(request, _orderRepository);
+            return core.DoExecute();
         }
     }
 }

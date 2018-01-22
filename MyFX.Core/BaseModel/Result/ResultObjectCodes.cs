@@ -33,6 +33,11 @@ namespace MyFX.Core.BaseModel.Result
         public static readonly int NoFound = 404;
 
         /// <summary>
+        /// 数据并发冲突
+        /// </summary>
+        public static readonly int DbUpdateConcurrency = 408;
+
+        /// <summary>
         /// 服务器内部错误
         /// </summary>
         public static readonly int ServerError = 500;

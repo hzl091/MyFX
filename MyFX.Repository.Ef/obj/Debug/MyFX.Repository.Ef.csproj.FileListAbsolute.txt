@@ -1,0 +1,16 @@
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\MyFX.Repository.Ef.dll.config
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\MyFX.Repository.Ef.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\MyFX.Repository.Ef.pdb
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\Autofac.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\EntityFramework.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\EntityFramework.SqlServer.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\MyFX.Core.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\MyFX.Core.pdb
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\Autofac.xml
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\EntityFramework.xml
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\EntityFramework.SqlServer.xml
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\obj\Debug\MyFX.Repository.Ef.csprojResolveAssemblyReference.cache
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\obj\Debug\MyFX.Repository.Ef.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\obj\Debug\MyFX.Repository.Ef.pdb
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\Newtonsoft.Json.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Ef\bin\Debug\Newtonsoft.Json.xml

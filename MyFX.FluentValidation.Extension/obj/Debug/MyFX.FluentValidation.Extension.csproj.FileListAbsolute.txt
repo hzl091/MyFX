@@ -9,3 +9,5 @@ E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\Autofac.xml
 E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\obj\Debug\MyFX.FluentValidation.Extension.csprojResolveAssemblyReference.cache
 E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\obj\Debug\MyFX.FluentValidation.Extension.dll
 E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\obj\Debug\MyFX.FluentValidation.Extension.pdb
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\Newtonsoft.Json.dll
+E:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\bin\Debug\Newtonsoft.Json.xml

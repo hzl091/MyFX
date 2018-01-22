@@ -10,10 +10,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyFX.Core.BaseModel.Request;
 
 namespace MyFX.Repository.Test.Dtos.Request
 {
-    public class FindOrdersRequest
+    public class FindOrdersRequest : IRequest
     {
         public int PageSize { get; set; }
         public int PageIndex { get; set; }

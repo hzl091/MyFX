@@ -13,13 +13,19 @@ namespace MyFX.Core.Exceptions
         }
 
         public MyFXException(string message, string exceptionCode = "")
-            : base(message)
+            : this(message, exceptionCode, null)
         {
-            this.Code = exceptionCode;
+            
         }
 
-        public MyFXException(string format, string message, string exceptionCode = "")
-            : base(string.Format(format, message))
+        public MyFXException(string message, Exception innerException)
+            : this(message, "", innerException)
+        {
+            
+        }
+
+        public MyFXException(string message, string exceptionCode, Exception innerException)
+            : base(message, innerException)
         {
             this.Code = exceptionCode;
         }

@@ -12,7 +12,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using MyFX.Core.DI;
-using MyFX.Core.Repository;
+using MyFX.Core.Domain.Uow;
+using MyFX.Core.Logs;
+using MyFX.Log.Log4Net;
+using MyFX.Repository.Ef;
 using MyFX.Repository.Test.DAL;
 
 namespace MyFX.Repository.Test
@@ -66,6 +69,7 @@ namespace MyFX.Repository.Test
             Action<ContainerBuilder> act = builder =>
             {
                 builder.RegisterType<EFUnitOfWorkFactory>().As<IUnitOfWorkFactory>();
+                builder.RegisterType<LogFactory>().As<ILogFactory>();
             }; //配置使用的工作单元工厂
             var container = DIBootstrapper.Initialise(act, new string[] { "MyFX.Repository.Test" });
             EFUnitOfWorkFactory.SetObjectContext(() => dbContext);//数据库上下文与工作单元工厂关联

@@ -11,6 +11,7 @@ using MyFX.Core.BaseModel;
 using MyFX.Core.BaseModel.Request;
 using MyFX.Core.BaseModel.Result;
 using MyFX.Core.Exceptions;
+using MyFX.Core.Logs;
 using MyFX.Core.Validations;
 
 namespace MyFX.Core.Actions
@@ -112,8 +113,7 @@ namespace MyFX.Core.Actions
         /// </summary>
         public virtual void Log(Exception ex)
         {
-            //LoggerManager.ErrorLog.Error(ex);
-            //TODO: 待调整
+            LoggerManager.ErrorLog.Error(ex);
         }
     }
 }

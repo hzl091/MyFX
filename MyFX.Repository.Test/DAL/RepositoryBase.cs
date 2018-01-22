@@ -6,6 +6,8 @@
 ****************************************************************************************/
 
 using MyFX.Core.Domain;
+using MyFX.Core.Domain.Entities;
+using MyFX.Repository.Ef;
 
 namespace MyFX.Repository.Test.DAL
 {

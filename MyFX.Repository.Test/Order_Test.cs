@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyFX.Core.BaseModel;
 using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.DI;
-using MyFX.Core.Repository;
+using MyFX.Core.Domain.Uow;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
 using MyFX.Repository.Test.Dtos.Request;
@@ -131,12 +131,20 @@ namespace MyFX.Repository.Test
             var orderService = ci.Resolve<IOrderService>();
 
             var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 2, PageSize = 2});
-            var orders = rs.retBody.Rows;
-            foreach (var order in orders)
+            if (rs.isOk)
             {
-                Console.WriteLine(order.OrderNo);
+                var orders = rs.retBody.Rows;
+                foreach (var order in orders)
+                {
+                    Console.WriteLine(order.OrderNo);
+                }
+                Console.WriteLine("total:" + rs.retBody.TotalCount);
             }
-            Console.WriteLine("total:" + rs.retBody.TotalCount);
+            else
+            {
+                Console.WriteLine(rs.retMsg);
+            }
+            
         }
     }
 }
