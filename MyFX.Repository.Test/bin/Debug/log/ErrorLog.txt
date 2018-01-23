@@ -1,0 +1,6 @@
+﻿[2018-01-23 08:52:01,014] [8e04d246-004f-41bf-91a8-6a9f4be58c6a] ERROR ErrorLog [(null)]  - System.Exception: 出错啦.....
+   在 MyFX.Repository.Test.Service.Core.FindOrdersCore.Execute() 位置 e:\UnitOfWork\MyFX\MyFX.Repository.Test\Service\Core\FindOrdersCore.cs:行号 37
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+[2018-01-23 08:54:51,274] [8737ae58-6e2f-463a-9a8a-d3edb8bea95e] ERROR ErrorLog [(null)]  - System.Exception: 出错啦.....
+   在 MyFX.Repository.Test.Service.Core.FindOrdersCore.Execute() 位置 e:\UnitOfWork\MyFX\MyFX.Repository.Test\Service\Core\FindOrdersCore.cs:行号 37
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51

@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace MyFX.Log.Log4Net
         private readonly log4.ILog _innerLog = null;
         static Log()
         {
-            string configeFile = System.AppDomain.CurrentDomain.BaseDirectory + "Config\\Log4net.config";
+            string configeFile = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Config\\Log4net.config");
             XmlConfigurator.Configure(new System.IO.FileInfo(configeFile));
         }
 
