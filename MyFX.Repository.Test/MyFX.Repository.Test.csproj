@@ -47,6 +47,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.3.4\lib\net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -94,11 +98,16 @@
     <Compile Include="DAL\RepositoryBase.cs" />
     <Compile Include="Order_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Validators\FindOrdersValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyFX.Core\MyFX.Core.csproj">
       <Project>{08746b43-a5ad-406d-ab88-0f2d7fc8c722}</Project>
       <Name>MyFX.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyFX.FluentValidation.Extension\MyFX.FluentValidation.Extension.csproj">
+      <Project>{4AFF08CE-1FD2-4F2F-82B9-264D4D555526}</Project>
+      <Name>MyFX.FluentValidation.Extension</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyFX.Log.Log4Net\MyFX.Log.Log4Net.csproj">
       <Project>{01435fb6-277b-4fcb-9778-83b0c3e71f9a}</Project>

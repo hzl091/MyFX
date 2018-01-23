@@ -1,0 +1,8 @@
+E:\UnitOfWork\MyFX\MyFX.RestSharp\bin\Debug\MyFX.RestSharp.dll
+E:\UnitOfWork\MyFX\MyFX.RestSharp\bin\Debug\MyFX.RestSharp.pdb
+E:\UnitOfWork\MyFX\MyFX.RestSharp\bin\Debug\RestSharp.dll
+E:\UnitOfWork\MyFX\MyFX.RestSharp\bin\Debug\System.ValueTuple.dll
+E:\UnitOfWork\MyFX\MyFX.RestSharp\bin\Debug\System.ValueTuple.xml
+E:\UnitOfWork\MyFX\MyFX.RestSharp\obj\Debug\MyFX.RestSharp.csprojResolveAssemblyReference.cache
+E:\UnitOfWork\MyFX\MyFX.RestSharp\obj\Debug\MyFX.RestSharp.dll
+E:\UnitOfWork\MyFX\MyFX.RestSharp\obj\Debug\MyFX.RestSharp.pdb

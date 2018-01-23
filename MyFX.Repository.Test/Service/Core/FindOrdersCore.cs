@@ -15,6 +15,7 @@ using MyFX.Core.BaseModel.Paging;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Dtos.Request;
 using MyFX.Repository.Test.Dtos.Response;
+using MyFX.Repository.Test.Service.Validators;
 
 namespace MyFX.Repository.Test.Service.Core
 {
@@ -26,6 +27,7 @@ namespace MyFX.Repository.Test.Service.Core
             : base(request)
         {
             _orderRepository = orderRepository;
+            SetValidator(new FindOrdersValidator());
         }
 
         protected override FindOrdersResult Execute()

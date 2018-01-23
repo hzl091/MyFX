@@ -2,6 +2,7 @@
 using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyFX.Core.Base;
 using MyFX.Core.BaseModel;
 using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.DI;
@@ -121,6 +122,7 @@ namespace MyFX.Repository.Test
             var orderService = ci.Resolve<IOrderService>();
 
             var rs = orderService.GetOrder(new GetOrderRequest() { OrderNo = "66666588888" });
+            Console.WriteLine(rs.ToJsonString());
             Console.WriteLine(rs.retBody.CustomerId); 
         }
 
@@ -130,7 +132,7 @@ namespace MyFX.Repository.Test
             var ci = GetContainer();
             var orderService = ci.Resolve<IOrderService>();
 
-            var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 2, PageSize = 2});
+            var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 0, PageSize = 2});
             if (rs.isOk)
             {
                 var orders = rs.retBody.Rows;

@@ -4,3 +4,8 @@
 [2018-01-23 08:54:51,274] [8737ae58-6e2f-463a-9a8a-d3edb8bea95e] ERROR ErrorLog [(null)]  - System.Exception: 出错啦.....
    在 MyFX.Repository.Test.Service.Core.FindOrdersCore.Execute() 位置 e:\UnitOfWork\MyFX\MyFX.Repository.Test\Service\Core\FindOrdersCore.cs:行号 37
    在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+[2018-01-23 15:54:09,509] [4] ERROR ErrorLog [(null)]  - FluentValidation.ValidationException: 'Page Index' 必须大于 '0'。
+   在 FluentValidation.EntityValidatorBase`1.DoValidate(Object instance, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\EntityValidatorBase.cs:行号 32
+   在 MyFX.Core.BaseModel.Request.IRequestExtension.Validate(IRequest request, IValidator validator, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.Core\BaseModel\Request\IRequestExtension.cs:行号 30
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoValidate() 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 103
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 50

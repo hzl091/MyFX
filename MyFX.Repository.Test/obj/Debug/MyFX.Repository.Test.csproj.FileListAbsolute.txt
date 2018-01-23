@@ -23,3 +23,7 @@ E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\Newtonsoft.Json.xml
 E:\UnitOfWork\MyFX\MyFX.Repository.Test\obj\Debug\MyFX.Repository.Test.csprojResolveAssemblyReference.cache
 E:\UnitOfWork\MyFX\MyFX.Repository.Test\obj\Debug\MyFX.Repository.Test.dll
 E:\UnitOfWork\MyFX\MyFX.Repository.Test\obj\Debug\MyFX.Repository.Test.pdb
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\FluentValidation.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\MyFX.FluentValidation.Extension.dll
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\MyFX.FluentValidation.Extension.pdb
+E:\UnitOfWork\MyFX\MyFX.Repository.Test\bin\Debug\FluentValidation.xml

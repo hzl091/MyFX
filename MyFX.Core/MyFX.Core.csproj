@@ -71,6 +71,7 @@
     <Compile Include="BaseModel\Result\IResultObjectExtension.cs" />
     <Compile Include="BaseModel\Result\ResultObject`.cs" />
     <Compile Include="BaseModel\SortRule.cs" />
+    <Compile Include="Base\CollectionExtensions.cs" />
     <Compile Include="Base\ConfigManager.cs" />
     <Compile Include="Base\DateTimeExtension.cs" />
     <Compile Include="Base\DecimalExtension.cs" />
@@ -78,6 +79,8 @@
     <Compile Include="Base\FileHelper.cs" />
     <Compile Include="Base\ImageHelper.cs" />
     <Compile Include="Base\JsonExtensions.cs" />
+    <Compile Include="Base\NullableExtensions.cs" />
+    <Compile Include="Base\ParamterCheckExtensions.cs" />
     <Compile Include="Base\StringExtension.cs" />
     <Compile Include="Base\ThrowHelper.cs" />
     <Compile Include="Base\TimeHelper.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="Domain\Repositories\IRepository.cs" />
     <Compile Include="Domain\Uow\IUnitOfWork.cs" />
     <Compile Include="Domain\Uow\IUnitOfWorkFactory.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Validations\IValidator.cs" />
     <Compile Include="Validations\ValidateResult.cs" />
     <Compile Include="Validations\ValidateResults.cs" />
@@ -120,6 +124,9 @@
   <ItemGroup>
     <Folder Include="Caches\" />
     <Folder Include="Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

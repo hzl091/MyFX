@@ -19,7 +19,7 @@ namespace MyFX.Log.Log4Net
 {
     public class Log : ILog
     {
-        private readonly log4.ILog _innerLog = null;
+        private readonly log4.ILog _logProvider = null;
         static Log()
         {
             string configeFile = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Config\\Log4net.config");
@@ -28,57 +28,57 @@ namespace MyFX.Log.Log4Net
 
         public Log(string name)
         {
-            _innerLog = log4.LogManager.GetLogger(name);
+            _logProvider = log4.LogManager.GetLogger(name);
         }
 
         public void Debug(object message)
         {
-            _innerLog.Debug(message);
+            _logProvider.Debug(message);
         }
 
         public void Debug(object message, Exception exception)
         {
-            _innerLog.Debug(message, exception);
+            _logProvider.Debug(message, exception);
         }
 
         public void Info(object message)
         {
-            _innerLog.Info(message);
+            _logProvider.Info(message);
         }
 
         public void Info(object message, Exception exception)
         {
-            _innerLog.Info(message, exception);
+            _logProvider.Info(message, exception);
         }
 
         public void Warn(object message)
         {
-            _innerLog.Warn(message);
+            _logProvider.Warn(message);
         }
 
         public void Warn(object message, Exception exception)
         {
-            _innerLog.Warn(message, exception);
+            _logProvider.Warn(message, exception);
         }
 
         public void Error(object message)
         {
-            _innerLog.Error(message);
+            _logProvider.Error(message);
         }
 
         public void Error(object message, Exception exception)
         {
-            _innerLog.Error(message, exception);
+            _logProvider.Error(message, exception);
         }
 
         public void Fatal(object message)
         {
-            _innerLog.Fatal(message);
+            _logProvider.Fatal(message);
         }
 
         public void Fatal(object message, Exception exception)
         {
-            _innerLog.Fatal(message, exception);
+            _logProvider.Fatal(message, exception);
         }
     }
 }
