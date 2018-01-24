@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace MyFX.Core.BaseModel.Paging
 {
     /// <summary>
     /// 分页模型基类
     /// </summary>
-    [Serializable]
+    [DataContract]
     public class PagedBase : IPaged
     {
         /// <summary>
@@ -46,24 +47,29 @@ namespace MyFX.Core.BaseModel.Paging
         /// <summary>
         /// 当前页码数
         /// </summary>
-        public int PageIndex { get; set; }
+        [DataMember]
+        public virtual int PageIndex { get; set; }
 
         /// <summary>
         /// 每页条数
         /// </summary>
-        public int PageSize { get; set; }
+        [DataMember]
+        public virtual int PageSize { get; set; }
 
         /// <summary>
         /// 总记录数
         /// </summary>
-        public int TotalCount { get; set; }
+        [DataMember]
+        public virtual int TotalCount { get; set; }
 
         /// <summary>
         /// 总页数
         /// </summary>
-        public int PageCount
+        [DataMember]
+        public virtual int PageCount
         {
             get { return (int) Math.Ceiling((double) this.TotalCount/this.PageSize); }
+            set { } //wcf序列化或者反射的时候需要
         }
     }
 }

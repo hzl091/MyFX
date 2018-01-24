@@ -64,7 +64,6 @@ namespace MyFX.Core.Actions
                 {
                     if (!string.IsNullOrEmpty(myFxEx.Code))
                     {
-                        ResultObject.isOk = false;
                         ResultObject.retStatus = myFxEx.Code.ToInt();
                         ResultObject.retMsg = myFxEx.Message;
                         if (myFxEx.Data.Count > 0)

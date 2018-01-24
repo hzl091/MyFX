@@ -132,7 +132,7 @@ namespace MyFX.Repository.Test
             var ci = GetContainer();
             var orderService = ci.Resolve<IOrderService>();
 
-            var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 0, PageSize = 2});
+            var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 1, PageSize = 2});
             if (rs.isOk)
             {
                 var orders = rs.retBody.Rows;

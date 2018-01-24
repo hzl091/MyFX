@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Runtime.Serialization;
 using MyFX.Core.Exceptions;
 
 namespace MyFX.Core.BaseModel.Result
@@ -7,7 +8,7 @@ namespace MyFX.Core.BaseModel.Result
     /// <summary>
     /// 结果对象
     /// </summary>
-    [Serializable]
+   [DataContract]
     public class ResultObject : IResultObject
     {
         /// <summary>
@@ -31,21 +32,29 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 状态码
         /// </summary>
-        public int retStatus { get; set; }
+        [DataMember]
+        public virtual int retStatus { get; set; }
 
         /// <summary>
         /// 消息
         /// </summary>
-        public string retMsg { get; set; }
+        [DataMember]
+        public virtual string retMsg { get; set; }
 
         /// <summary>
         /// 异常时返回的业务数据
         /// </summary>
-        public object retErrorBody { get; set; }
+        [DataMember]
+        public virtual object retErrorBody { get; set; }
 
         /// <summary>
         /// 是否成功
         /// </summary>
-        public bool isOk { get; set; }
+        [DataMember]
+        public virtual bool isOk
+        {
+            get { return retStatus == ResultObjectCodes.Success; }
+            set { }
+        }
     }
 }

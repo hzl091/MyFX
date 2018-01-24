@@ -21,8 +21,7 @@ namespace MyFX.Core.BaseModel.Result
             T obj = new T
             {
                 retStatus = resultObject.retStatus,
-                retMsg = resultObject.retMsg,
-                isOk = resultObject.isOk
+                retMsg = resultObject.retMsg
             };
             return obj;
         }
@@ -39,7 +38,6 @@ namespace MyFX.Core.BaseModel.Result
             resultObject.retStatus = retStatus;
             resultObject.retMsg = retMsg;
             resultObject.retErrorBody = retErrorBody;
-            resultObject.isOk = resultObject.retStatus == ResultObjectCodes.Success;
         }
 
 

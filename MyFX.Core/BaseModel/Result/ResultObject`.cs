@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace MyFX.Core.BaseModel.Result
 {
@@ -6,7 +7,7 @@ namespace MyFX.Core.BaseModel.Result
     /// 相应信息包装类
     /// </summary>
     /// <typeparam name="TBody"></typeparam>
-    [Serializable]
+    [DataContract]
     public class ResultObject<TBody> : ResultObject
     {
         /// <summary>
@@ -31,7 +32,8 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 返回的业务数据
         /// </summary>
-        public TBody retBody { get; set; }
+        [DataMember]
+        public virtual TBody retBody { get; set; }
 
     }
 }

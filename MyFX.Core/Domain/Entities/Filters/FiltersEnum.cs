@@ -5,6 +5,6 @@
         /// <summary>
         /// 软删除
         /// </summary>
-        SoftDelete=0
+        SoftDelete = 0
     }
 }

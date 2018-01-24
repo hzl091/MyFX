@@ -36,7 +36,7 @@ namespace MyFX.Repository.Test.Service.Core
             var pageOrders = _orderRepository.FindPageList(pagedQuery, null, o => o.OrderNo, false);
             FindOrdersResult rs = new FindOrdersResult {retBody = pageOrders};
 
-            throw new Exception("出错啦.....");
+            //throw new Exception("出错啦.....");
             return rs;
         }
     }

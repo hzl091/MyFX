@@ -1,0 +1,10 @@
+E:\UnitOfWork\MyFX\MyFX.Core\bin\Release\MyFX.Core.dll
+E:\UnitOfWork\MyFX\MyFX.Core\bin\Release\MyFX.Core.pdb
+E:\UnitOfWork\MyFX\MyFX.Core\bin\Release\Autofac.dll
+E:\UnitOfWork\MyFX\MyFX.Core\bin\Release\Newtonsoft.Json.dll
+E:\UnitOfWork\MyFX\MyFX.Core\bin\Release\Autofac.xml
+E:\UnitOfWork\MyFX\MyFX.Core\bin\Release\Newtonsoft.Json.xml
+E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.Properties.Resources.resources
+E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.csproj.GenerateResource.Cache
+E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.dll
+E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.pdb

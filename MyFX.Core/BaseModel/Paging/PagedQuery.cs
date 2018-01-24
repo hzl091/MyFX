@@ -6,13 +6,14 @@
 ****************************************************************************************/
 
 using System;
+using System.Runtime.Serialization;
 
 namespace MyFX.Core.BaseModel.Paging
 {
     /// <summary>
     /// 分页查询条件
     /// </summary>
-    [Serializable]
+    [DataContract]
     public class PagedQuery
     {
         public PagedQuery()
@@ -28,11 +29,13 @@ namespace MyFX.Core.BaseModel.Paging
         /// <summary>
         /// 当前页码
         /// </summary>
-        public int PageIndex { get; set; }
+        [DataMember]
+        public virtual int PageIndex { get; set; }
 
         /// <summary>
         /// 页尺码
         /// </summary>
-        public int PageSize { get; set; }
+        [DataMember]
+        public virtual int PageSize { get; set; }
     }
 }

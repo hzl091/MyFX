@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace MyFX.Core.BaseModel.Paging
 {
@@ -8,7 +9,7 @@ namespace MyFX.Core.BaseModel.Paging
     /// 列表分页模型
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    [Serializable]
+   [DataContract]
     public class PagedList<T> : PagedBase, IPagedList<T>
     {
         /// <summary>
@@ -46,6 +47,7 @@ namespace MyFX.Core.BaseModel.Paging
         /// <summary>
         /// 分页数据列表
         /// </summary>
-        public IList<T> Rows { get; set; }
+        [DataMember]
+        public virtual IList<T> Rows { get; set; }
     }
 }

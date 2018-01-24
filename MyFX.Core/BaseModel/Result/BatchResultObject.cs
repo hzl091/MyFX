@@ -7,31 +7,32 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace MyFX.Core.BaseModel.Result
 {
     /// <summary>
     /// /批量操作结果
     /// </summary>
-    [Serializable]
+    [DataContract]
     public class BatchResultObject : ResultObject
     {
         /// <summary>
         /// 操作总数量
         /// </summary>
-        //[DataMember]
-        public int TotalCount { get; set; }
+        [DataMember]
+        public virtual int TotalCount { get; set; }
 
         /// <summary>
         /// 操作成功数量
         /// </summary>
-        //[DataMember]
-        public int SuccessCount { get; set; }
+        [DataMember]
+        public virtual int SuccessCount { get; set; }
 
         /// <summary>
         /// 执行失败对象唯一标识集合
         /// </summary>
-        //[DataMember]
-        public List<string> FailIdCodes { get; set; }
+        [DataMember]
+        public virtual List<string> FailIdCodes { get; set; }
     }
 }

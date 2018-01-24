@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\wwwroot\xfc.wcfTest</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Autofac.dll">
+      <publishTime>01/18/2018 14:28:34</publishTime>
+    </File>
+    <File Include="bin/MyFX.Core.dll">
+      <publishTime>01/24/2018 11:10:16</publishTime>
+    </File>
+    <File Include="bin/MyFX.WCF.Test.dll">
+      <publishTime>01/24/2018 11:11:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/22/2018 11:13:01</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>01/24/2018 10:44:38</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/24/2018 11:10:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

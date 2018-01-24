@@ -1,0 +1,12 @@
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\MyFX.WCF.Test.dll.config
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\MyFX.WCF.Test.dll
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\MyFX.WCF.Test.pdb
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\MyFX.Core.dll
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\Autofac.dll
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\Newtonsoft.Json.dll
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\MyFX.Core.pdb
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\Autofac.xml
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\bin\Newtonsoft.Json.xml
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\obj\Release\MyFX.WCF.Test.csprojResolveAssemblyReference.cache
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\obj\Release\MyFX.WCF.Test.dll
+E:\UnitOfWork\MyFX\MyFX.WCF.Test\obj\Release\MyFX.WCF.Test.pdb
