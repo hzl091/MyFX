@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Runtime.Serialization;
 using MyFX.Core.Exceptions;
+using Newtonsoft.Json;
 
 namespace MyFX.Core.BaseModel.Result
 {
     /// <summary>
     /// 结果对象
     /// </summary>
-   [DataContract]
     public class ResultObject : IResultObject
     {
         /// <summary>
@@ -32,28 +32,28 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 状态码
         /// </summary>
-        [DataMember]
-        public virtual int retStatus { get; set; }
+        [JsonProperty(PropertyName = "retStatus")]
+        public int StatusCode { get; set; }
 
         /// <summary>
         /// 消息
         /// </summary>
-        [DataMember]
-        public virtual string retMsg { get; set; }
-
+        [JsonProperty(PropertyName = "retMsg")]
+        public string Message { get; set; }
+        
         /// <summary>
         /// 异常时返回的业务数据
         /// </summary>
-        [DataMember]
-        public virtual object retErrorBody { get; set; }
+        [JsonProperty(PropertyName = "retErrorBody")]
+        public object ErrorBody { get; set; }
 
         /// <summary>
         /// 是否成功
         /// </summary>
-        [DataMember]
-        public virtual bool isOk
+        [JsonProperty(PropertyName = "isOk")]
+        public bool IsOk
         {
-            get { return retStatus == ResultObjectCodes.Success; }
+            get { return StatusCode == ResultObjectCodes.Success; }
             set { }
         }
     }

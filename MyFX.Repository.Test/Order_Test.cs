@@ -123,7 +123,7 @@ namespace MyFX.Repository.Test
 
             var rs = orderService.GetOrder(new GetOrderRequest() { OrderNo = "66666588888" });
             Console.WriteLine(rs.ToJsonString());
-            Console.WriteLine(rs.retBody.CustomerId); 
+            Console.WriteLine(rs.DataBody.CustomerId); 
         }
 
         [TestMethod]
@@ -133,18 +133,18 @@ namespace MyFX.Repository.Test
             var orderService = ci.Resolve<IOrderService>();
 
             var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 1, PageSize = 2});
-            if (rs.isOk)
+            if (rs.IsOk)
             {
-                var orders = rs.retBody.Rows;
+                var orders = rs.DataBody.Rows;
                 foreach (var order in orders)
                 {
                     Console.WriteLine(order.OrderNo);
                 }
-                Console.WriteLine("total:" + rs.retBody.TotalCount);
+                Console.WriteLine("total:" + rs.DataBody.TotalCount);
             }
             else
             {
-                Console.WriteLine(rs.retMsg);
+                Console.WriteLine(rs.Message);
             }
             
         }

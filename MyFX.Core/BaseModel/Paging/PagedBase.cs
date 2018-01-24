@@ -6,7 +6,6 @@ namespace MyFX.Core.BaseModel.Paging
     /// <summary>
     /// 分页模型基类
     /// </summary>
-    [DataContract]
     public class PagedBase : IPaged
     {
         /// <summary>
@@ -47,26 +46,22 @@ namespace MyFX.Core.BaseModel.Paging
         /// <summary>
         /// 当前页码数
         /// </summary>
-        [DataMember]
-        public virtual int PageIndex { get; set; }
+        public int PageIndex { get; set; }
 
         /// <summary>
         /// 每页条数
         /// </summary>
-        [DataMember]
-        public virtual int PageSize { get; set; }
+        public int PageSize { get; set; }
 
         /// <summary>
         /// 总记录数
         /// </summary>
-        [DataMember]
-        public virtual int TotalCount { get; set; }
+        public int TotalCount { get; set; }
 
         /// <summary>
         /// 总页数
         /// </summary>
-        [DataMember]
-        public virtual int PageCount
+        public int PageCount
         {
             get { return (int) Math.Ceiling((double) this.TotalCount/this.PageSize); }
             set { } //wcf序列化或者反射的时候需要

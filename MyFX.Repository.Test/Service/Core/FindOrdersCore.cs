@@ -34,7 +34,7 @@ namespace MyFX.Repository.Test.Service.Core
         {
             var pagedQuery = new PagedQuery(Request.PageIndex, Request.PageSize);
             var pageOrders = _orderRepository.FindPageList(pagedQuery, null, o => o.OrderNo, false);
-            FindOrdersResult rs = new FindOrdersResult {retBody = pageOrders};
+            FindOrdersResult rs = new FindOrdersResult {DataBody = pageOrders};
 
             //throw new Exception("出错啦.....");
             return rs;

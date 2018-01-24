@@ -8,3 +8,4 @@ E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.Properties.Resources.resource
 E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.csproj.GenerateResource.Cache
 E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.dll
 E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.pdb
+E:\UnitOfWork\MyFX\MyFX.Core\obj\Release\MyFX.Core.csprojResolveAssemblyReference.cache

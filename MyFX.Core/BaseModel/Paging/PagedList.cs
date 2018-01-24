@@ -9,7 +9,6 @@ namespace MyFX.Core.BaseModel.Paging
     /// 列表分页模型
     /// </summary>
     /// <typeparam name="T"></typeparam>
-   [DataContract]
     public class PagedList<T> : PagedBase, IPagedList<T>
     {
         /// <summary>
@@ -47,7 +46,6 @@ namespace MyFX.Core.BaseModel.Paging
         /// <summary>
         /// 分页数据列表
         /// </summary>
-        [DataMember]
-        public virtual IList<T> Rows { get; set; }
+        public IList<T> Rows { get; set; }
     }
 }

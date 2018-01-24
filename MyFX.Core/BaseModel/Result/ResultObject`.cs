@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace MyFX.Core.BaseModel.Result
 {
@@ -7,7 +7,6 @@ namespace MyFX.Core.BaseModel.Result
     /// 相应信息包装类
     /// </summary>
     /// <typeparam name="TBody"></typeparam>
-    [DataContract]
     public class ResultObject<TBody> : ResultObject
     {
         /// <summary>
@@ -22,18 +21,18 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="retBody">要返回的业务数据</param>
-        public ResultObject(TBody retBody) :
+        /// <param name="dataBody">要返回的业务数据</param>
+        public ResultObject(TBody dataBody) :
             this()
         {
-           this.retBody = retBody;
+           this.DataBody = dataBody;
         }
 
         /// <summary>
         /// 返回的业务数据
         /// </summary>
-        [DataMember]
-        public virtual TBody retBody { get; set; }
+        [JsonProperty(PropertyName = "retBody")]
+        public TBody DataBody { get; set; }
 
     }
 }

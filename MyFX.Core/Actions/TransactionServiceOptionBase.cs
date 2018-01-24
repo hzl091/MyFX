@@ -35,7 +35,7 @@ namespace MyFX.Core.Actions
             using (var trans = new TransactionScope())
             {
                 TResultObject res = base.DoExecute(throwException);
-                if (res.isOk) { trans.Complete(); }
+                if (res.IsOk) { trans.Complete(); }
                 return res;
             }           
         }

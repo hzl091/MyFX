@@ -64,11 +64,11 @@ namespace MyFX.Core.Actions
                 {
                     if (!string.IsNullOrEmpty(myFxEx.Code))
                     {
-                        ResultObject.retStatus = myFxEx.Code.ToInt();
-                        ResultObject.retMsg = myFxEx.Message;
+                        ResultObject.StatusCode = myFxEx.Code.ToInt();
+                        ResultObject.Message = myFxEx.Message;
                         if (myFxEx.Data.Count > 0)
                         {
-                            ResultObject.retErrorBody = myFxEx.Data;
+                            ResultObject.ErrorBody = myFxEx.Data;
                         }
                     }
                     else

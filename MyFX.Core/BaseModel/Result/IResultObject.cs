@@ -11,21 +11,21 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 状态码
         /// </summary>
-        int retStatus { get; set; }
+        int StatusCode { get; set; }
 
         /// <summary>
         /// 消息
         /// </summary>
-        string retMsg { get; set; }
+        string Message { get; set; }
 
         /// <summary>
         /// 异常时返回的业务数据
         /// </summary>
-        object retErrorBody { get; set; }
+        object ErrorBody { get; set; }
 
         /// <summary>
         /// 是否成功
         /// </summary>
-        bool isOk { get; set; }
+        bool IsOk { get; set; }
     }
 }

@@ -13,7 +13,6 @@ namespace MyFX.Core.BaseModel.Paging
     /// <summary>
     /// 分页查询条件
     /// </summary>
-    [DataContract]
     public class PagedQuery
     {
         public PagedQuery()
@@ -29,13 +28,11 @@ namespace MyFX.Core.BaseModel.Paging
         /// <summary>
         /// 当前页码
         /// </summary>
-        [DataMember]
-        public virtual int PageIndex { get; set; }
+        public int PageIndex { get; set; }
 
         /// <summary>
         /// 页尺码
         /// </summary>
-        [DataMember]
-        public virtual int PageSize { get; set; }
+        public int PageSize { get; set; }
     }
 }
