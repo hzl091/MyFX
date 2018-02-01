@@ -36,5 +36,10 @@ namespace MyFX.Repository.Test.Domain
         /// 订单状态
         /// </summary>
         public int OrderStatus { get; set; }
+
+        public void Cancel(string reason)
+        {
+            Console.WriteLine("订单取消成功。。。");
+        }
     }
 }

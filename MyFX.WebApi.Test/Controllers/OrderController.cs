@@ -11,7 +11,7 @@ namespace MyFX.WebApi.Test.Controllers
 {
     public class OrderController : ApiController
     {
-        public OrderResult Get(string orderNo)
+        public OrderResult Get(string orderno)
         {
             var order = new Order();
             order.OrderNo = "445454656565";
@@ -20,7 +20,6 @@ namespace MyFX.WebApi.Test.Controllers
             var rs = new OrderResult();
             rs.Wecome = "hello";
             rs.DataBody = order;
-
             return rs;
         }
     }

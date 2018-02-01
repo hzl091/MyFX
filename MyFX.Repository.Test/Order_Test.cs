@@ -7,8 +7,10 @@ using MyFX.Core.BaseModel;
 using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.DI;
 using MyFX.Core.Domain.Uow;
+using MyFX.Core.Events;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
+using MyFX.Repository.Test.Domain.Events;
 using MyFX.Repository.Test.Dtos.Request;
 using MyFX.Repository.Test.Service;
 
@@ -41,14 +43,30 @@ namespace MyFX.Repository.Test
             var ci = GetContainer();
             var uow = ci.Resolve<IUnitOfWorkFactory>().Create();
             IOrderRepository rep = ci.Resolve<IOrderRepository>();
-            rep.Add(new Order()
+            var order = new Order()
             {
-               OrderNo = "6999999999999",
-               CustomerId = 9986755,
-               OrderStatus = 80,
-               OrderType = 10,
-               StoreId = 7788,
-               StoreOwnerId = 9900
+                OrderNo = "6999999999999",
+                CustomerId = 9986755,
+                OrderStatus = 80,
+                OrderType = 10,
+                StoreId = 7788,
+                StoreOwnerId = 9900
+            };
+            rep.Add(order);
+
+            EventBus.Publish<OrderCreatedEvent>(new OrderCreatedEvent()
+            {
+                OrderNo = order.OrderNo,
+                CustomerName = "zzzz",
+                Email = "hzl091@126.com"
+            });
+
+            order.Cancel("无货");
+            EventBus.Publish<OrderCanceledEvent>(new OrderCanceledEvent()
+            {
+                OrderNo = order.OrderNo,
+                CustomerName = "zzzz",
+                Reason = "无货"
             });
 
             uow.Commit();

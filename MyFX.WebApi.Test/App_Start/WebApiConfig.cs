@@ -25,6 +25,12 @@ namespace MyFX.WebApi.Test
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                 name: "OrderApi",
+                 routeTemplate: "salesapi/{controller}/{orderno}",
+                 defaults: new { orderno = RouteParameter.Optional }
+             );
         }
     }
 }

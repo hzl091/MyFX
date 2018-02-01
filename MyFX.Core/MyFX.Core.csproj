@@ -97,6 +97,11 @@
     <Compile Include="Domain\Entities\Filters\FiltersEnum.cs" />
     <Compile Include="Domain\Entities\IAggregateRoot.cs" />
     <Compile Include="Domain\Entities\ISoftDelete.cs" />
+    <Compile Include="Events\DomainEvent.cs" />
+    <Compile Include="Events\EventBus.cs" />
+    <Compile Include="Events\IDomainEvent.cs" />
+    <Compile Include="Events\IDomainEventHandler.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Exceptions\AppServiceException.cs" />
     <Compile Include="Exceptions\DomainException.cs" />
     <Compile Include="Exceptions\MessageException.cs" />
@@ -123,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Caches\" />
-    <Folder Include="Events\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />

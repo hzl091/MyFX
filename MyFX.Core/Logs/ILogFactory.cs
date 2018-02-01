@@ -12,6 +12,13 @@ namespace MyFX.Core.Logs
     public interface ILogFactory
     {
         /// <summary>
+        /// 按名称获取日志器
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        ILog GetLog(string name);
+
+        /// <summary>
         /// 获取通用日志器
         /// </summary>
         /// <returns></returns>

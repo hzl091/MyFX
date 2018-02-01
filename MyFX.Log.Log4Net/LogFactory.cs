@@ -16,6 +16,11 @@ namespace MyFX.Log.Log4Net
 {
     public class LogFactory : ILogFactory
     {
+        public ILog GetLog(string name)
+        {
+            return new Log(name);
+        }
+
         public ILog GetCommonLog()
         {
             return new Log("CommonLog");

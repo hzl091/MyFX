@@ -84,6 +84,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Domain\EventHandlers\SendOrderCanceledEmailHandler.cs" />
+    <Compile Include="Domain\EventHandlers\SendOrderReceivedEmailHandler.cs" />
+    <Compile Include="Domain\EventHandlers\StorePointMessageHandler.cs" />
+    <Compile Include="Domain\Events\OrderCanceledEvent.cs" />
+    <Compile Include="Domain\Events\OrderCreatedEvent.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="DAL\IOrderRepository.cs" />
     <Compile Include="Dtos\Request\FindOrdersRequest.cs" />
@@ -125,6 +130,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Collections.Generic;
+using Autofac;
 
 namespace MyFX.Core.DI
 {
@@ -10,9 +11,17 @@ namespace MyFX.Core.DI
             this._container = container;
         }
 
-        public  TService Resolve<TService>() where TService:class
+        public  TService Resolve<TService>() 
+            where TService : class
         {
             return this._container.Resolve<TService>();
+        }
+
+
+        public IEnumerable<TService> ResolveAll<TService>()
+            where TService : class
+        {
+          return  _container.Resolve<IEnumerable<TService>>();
         }
 
         public IContainer Container {
