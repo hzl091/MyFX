@@ -56,6 +56,7 @@
     <Compile Include="Actions\OptionBase.cs" />
     <Compile Include="Actions\ServiceOptionBase.cs" />
     <Compile Include="Actions\TransactionServiceOptionBase.cs" />
+    <Compile Include="BaseModel\NameValue.cs" />
     <Compile Include="BaseModel\Result\BatchResultObject.cs" />
     <Compile Include="BaseModel\Request\IRequest.cs" />
     <Compile Include="BaseModel\Request\IRequestExtension.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Domain\Entities\IAggregateRoot.cs" />
     <Compile Include="Domain\Entities\ISoftDelete.cs" />
     <Compile Include="Events\DomainEvent.cs" />
+    <Compile Include="Events\DomainEventHandlerFactory.cs" />
     <Compile Include="Events\EventBus.cs" />
     <Compile Include="Events\IDomainEvent.cs" />
     <Compile Include="Events\IDomainEventHandler.cs" />

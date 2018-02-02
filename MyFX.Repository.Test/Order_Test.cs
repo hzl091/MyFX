@@ -54,7 +54,7 @@ namespace MyFX.Repository.Test
             };
             rep.Add(order);
 
-            EventBus.Publish<OrderCreatedEvent>(new OrderCreatedEvent()
+            EventBus.Publish(new OrderCreatedEvent()
             {
                 OrderNo = order.OrderNo,
                 CustomerName = "zzzz",
@@ -62,7 +62,7 @@ namespace MyFX.Repository.Test
             });
 
             order.Cancel("无货");
-            EventBus.Publish<OrderCanceledEvent>(new OrderCanceledEvent()
+            EventBus.Publish(new OrderCanceledEvent()
             {
                 OrderNo = order.OrderNo,
                 CustomerName = "zzzz",

@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace MyFX.Core.BaseModel.Result
 {
@@ -16,19 +17,40 @@ namespace MyFX.Core.BaseModel.Result
     /// </summary>
     public class BatchResultObject : ResultObject
     {
+        public BatchResultObject()
+        {
+        }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="totalCount">操作总数量</param>
+        /// <param name="successTotal">操作成功总数量</param>
+        /// <param name="faildTotal">操作失败总数量</param>
+        public BatchResultObject(int totalCount, int successTotal, int faildTotal)
+            : this()
+        {
+            TotalCount = totalCount;
+            SuccessTotal = successTotal;
+            FaildTotal = faildTotal;
+        }
+
         /// <summary>
         /// 操作总数量
         /// </summary>
-        public virtual int TotalCount { get; set; }
+        [JsonProperty(PropertyName = "total")]
+        public int TotalCount { get; set; }
 
         /// <summary>
-        /// 操作成功数量
+        /// 操作成功总数量
         /// </summary>
-        public virtual int SuccessCount { get; set; }
+        [JsonProperty(PropertyName = "successTotal")]
+        public int SuccessTotal { get; set; }
 
         /// <summary>
-        /// 执行失败对象唯一标识集合
+        /// 操作失败总数量
         /// </summary>
-        public virtual List<string> FailIdCodes { get; set; }
+        [JsonProperty(PropertyName = "faildTotal")]
+        public int FaildTotal { get; set; }
     }
 }

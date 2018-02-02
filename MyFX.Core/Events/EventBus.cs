@@ -28,7 +28,7 @@ namespace MyFX.Core.Events
             where TDomainEvent : class, IDomainEvent
         {
             IEnumerable<IDomainEventHandler<TDomainEvent>> handlers
-                = DIBootstrapper.Container.ResolveAll<IDomainEventHandler<TDomainEvent>>();
+                = EventHandlerFactory.GetEventHandlers<TDomainEvent>();
             foreach (var handler in handlers)
             {
                 handler.Handle(domainEvent);

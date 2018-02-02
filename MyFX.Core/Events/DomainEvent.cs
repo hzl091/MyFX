@@ -21,23 +21,24 @@ namespace MyFX.Core.Events
     {
         public DomainEvent()
         {
-            EventTime = DateTime.Now;
+            this.Id = Guid.NewGuid();
+            this.Handled = false;
+            this.AddedTime = DateTime.Now;
         }
 
-        public DomainEvent(object eventSource)
-            : this()
-        {
-            EventSource = eventSource;
-        }
+        /// <summary>
+        /// 标识
+        /// </summary>
+        public Guid Id { get; set; }
 
         /// <summary>
         /// 时间触发时间
         /// </summary>
-        public DateTime EventTime { get; set; }
+        public DateTime AddedTime { get; set; }
 
         /// <summary>
-        /// 事件源对象
+        /// 是否已处理
         /// </summary>
-        public object EventSource { get; set; }
+        public bool Handled { get; set; }
     }
 }
