@@ -5,12 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using MyFX.Core.BaseModel.Result;
+using MyFX.WebApi.Test.Filters;
 using Newtonsoft.Json;
 
 namespace MyFX.WebApi.Test.Controllers
 {
     public class OrderController : ApiController
     {
+        [OMSJwtAuthentication]
         public OrderResult Get(string orderno)
         {
             var order = new Order();

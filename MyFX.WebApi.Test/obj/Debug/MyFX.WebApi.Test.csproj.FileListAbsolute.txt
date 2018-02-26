@@ -88,3 +88,11 @@ E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\zh-Hans\System.Web.Http.Owin.resources.d
 E:\UnitOfWork\MyFX\MyFX.WebApi.Test\obj\Debug\MyFX.WebApi.Test.csprojResolveAssemblyReference.cache
 E:\UnitOfWork\MyFX\MyFX.WebApi.Test\obj\Debug\MyFX.WebApi.Test.dll
 E:\UnitOfWork\MyFX\MyFX.WebApi.Test\obj\Debug\MyFX.WebApi.Test.pdb
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\MyFX.WebApi.Extension.dll
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\Microsoft.IdentityModel.Tokens.dll
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\Microsoft.IdentityModel.Logging.dll
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\MyFX.WebApi.Extension.pdb
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\Microsoft.IdentityModel.Tokens.xml
+E:\UnitOfWork\MyFX\MyFX.WebApi.Test\bin\Microsoft.IdentityModel.Logging.xml
