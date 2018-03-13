@@ -5,6 +5,8 @@
  * 创建说明：
 ****************************************************************************************/
 
+using MyFX.Core.BaseModel.Request;
+using MyFX.Core.BaseModel.Result;
 using MyFX.Core.DI;
 using MyFX.Repository.Test.Domain;
 using MyFX.Repository.Test.Dtos.Request;
@@ -19,5 +21,7 @@ namespace MyFX.Repository.Test.Service
         GetOrderResult GetOrder(GetOrderRequest request);
 
         FindOrdersResult FindOrders(FindOrdersRequest request);
+
+        PageResultObject<Order> FindOrdersToPage(PageRequestBase request);
     }
 }

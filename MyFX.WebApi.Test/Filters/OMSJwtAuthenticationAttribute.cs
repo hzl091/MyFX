@@ -6,7 +6,7 @@ using MyFX.WebApi.Extension.Filters;
 
 namespace MyFX.WebApi.Test.Filters
 {
-    public class OMSJwtAuthenticationAttribute : JwtAuthenticationAttribute
+    public class OmsJwtAuthenticationAttribute : JwtAuthenticationAttribute
     {
         protected override bool CheckUserExists(string username)
         {

@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyFX.Core.Actions;
 using MyFX.Core.BaseModel.Paging;
+using MyFX.Core.BaseModel.Request;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Dtos.Request;
 using MyFX.Repository.Test.Dtos.Response;
@@ -32,7 +33,7 @@ namespace MyFX.Repository.Test.Service.Core
 
         protected override FindOrdersResult Execute()
         {
-            var pagedQuery = new PagedQuery(Request.PageIndex, Request.PageSize);
+            var pagedQuery = Request.ToPagedQuery();
             var pageOrders = _orderRepository.FindPageList(pagedQuery, null, o => o.OrderNo, false);
             FindOrdersResult rs = new FindOrdersResult {DataBody = pageOrders};
 

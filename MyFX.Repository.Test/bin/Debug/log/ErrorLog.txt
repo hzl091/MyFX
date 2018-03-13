@@ -14,3 +14,13 @@
    在 MyFX.Core.BaseModel.Request.IRequestExtension.Validate(IRequest request, IValidator validator, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.Core\BaseModel\Request\IRequestExtension.cs:行号 30
    在 MyFX.Core.Actions.ServiceOptionBase`2.DoValidate() 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 102
    在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 50
+[2018-03-13 10:34:28,449] [15] ERROR ErrorLog [(null)]  - System.InvalidCastException: 无法将类型为“MyFX.Core.BaseModel.Request.PageRequestBase”的对象强制转换为类型“MyFX.Repository.Test.Dtos.Request.FindOrdersRequest”。
+   在 FluentValidation.EntityValidatorBase`1.DoValidate(Object instance, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\EntityValidatorBase.cs:行号 25
+   在 MyFX.Core.BaseModel.Request.IRequestExtension.Validate(IRequest request, IValidator validator, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.Core\BaseModel\Request\IRequestExtension.cs:行号 30
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoValidate() 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 102
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 50
+[2018-03-13 18:01:42,334] [4] ERROR ErrorLog [(null)]  - FluentValidation.ValidationException: 'Page Index' 必须大于 '0'。
+   在 FluentValidation.EntityValidatorBase`1.DoValidate(Object instance, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.FluentValidation.Extension\EntityValidatorBase.cs:行号 32
+   在 MyFX.Core.BaseModel.Request.IRequestExtension.Validate(IRequest request, IValidator validator, Boolean throwError) 位置 e:\UnitOfWork\MyFX\MyFX.Core\BaseModel\Request\IRequestExtension.cs:行号 30
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoValidate() 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 102
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 e:\UnitOfWork\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 50

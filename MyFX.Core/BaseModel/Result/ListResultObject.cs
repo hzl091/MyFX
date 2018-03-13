@@ -1,7 +1,7 @@
 ﻿/****************************************************************************************
- * 文件名：FindOrdersRequest
+ * 文件名：ListResultObject
  * 作者：huangzl
- * 创始时间：2018/1/20 15:31:42
+ * 创始时间：2018/3/13 10:02:24
  * 创建说明：
 ****************************************************************************************/
 
@@ -10,12 +10,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyFX.Core.BaseModel.Request;
 
-namespace MyFX.Repository.Test.Dtos.Request
+namespace MyFX.Core.BaseModel.Result
 {
-    public class FindOrdersRequest : PageRequestBase
+    /// <summary>
+    /// 返回列表数据的结果对象
+    /// </summary>
+    public class ListResultObject<T> : ResultObject
     {
-       
+        /// <summary>
+        /// 数据对象列表
+        /// </summary>
+        public IList<T> List { get; set; }
     }
 }

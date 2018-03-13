@@ -13,7 +13,7 @@ namespace MyFX.WebApi.Extension.Filters
         public string Realm { get; set; }
         public bool AllowMultiple { get; private set; }
 
-        public JwtAuthenticationAttribute()
+        protected JwtAuthenticationAttribute()
         {
             AllowMultiple = false;
         }

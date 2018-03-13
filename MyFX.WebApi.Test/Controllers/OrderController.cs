@@ -12,7 +12,7 @@ namespace MyFX.WebApi.Test.Controllers
 {
     public class OrderController : ApiController
     {
-        [OMSJwtAuthentication]
+        [OmsJwtAuthentication]
         public OrderResult Get(string orderno)
         {
             var order = new Order();

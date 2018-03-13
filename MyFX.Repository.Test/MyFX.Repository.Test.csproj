@@ -96,6 +96,7 @@
     <Compile Include="Dtos\Response\FindOrdersResult.cs" />
     <Compile Include="Dtos\Response\GetOrderResult.cs" />
     <Compile Include="Service\Core\FindOrdersCore.cs" />
+    <Compile Include="Service\Core\FindOrdersToPageCore.cs" />
     <Compile Include="Service\IOrderService.cs" />
     <Compile Include="DAL\OracleDbContext.cs" />
     <Compile Include="DAL\OrderRepository.cs" />

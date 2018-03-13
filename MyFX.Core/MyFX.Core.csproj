@@ -57,6 +57,8 @@
     <Compile Include="Actions\ServiceOptionBase.cs" />
     <Compile Include="Actions\TransactionServiceOptionBase.cs" />
     <Compile Include="BaseModel\NameValue.cs" />
+    <Compile Include="BaseModel\Request\PageRequestBase.cs" />
+    <Compile Include="BaseModel\Request\PageRequestBaseExtension.cs" />
     <Compile Include="BaseModel\Result\BatchResultObject.cs" />
     <Compile Include="BaseModel\Request\IRequest.cs" />
     <Compile Include="BaseModel\Request\IRequestExtension.cs" />
@@ -67,9 +69,11 @@
     <Compile Include="BaseModel\Paging\PagedList.cs" />
     <Compile Include="BaseModel\Request\RequestBase.cs" />
     <Compile Include="BaseModel\Result\IResultObject.cs" />
+    <Compile Include="BaseModel\Result\ListResultObject.cs" />
+    <Compile Include="BaseModel\Result\PageResultObject.cs" />
     <Compile Include="BaseModel\Result\ResultObject.cs" />
     <Compile Include="BaseModel\Result\ResultObjectCodes.cs" />
-    <Compile Include="BaseModel\Result\IResultObjectExtension.cs" />
+    <Compile Include="BaseModel\Result\ResultObjectExtension.cs" />
     <Compile Include="BaseModel\Result\ResultObject`.cs" />
     <Compile Include="BaseModel\SortRule.cs" />
     <Compile Include="Base\CollectionExtensions.cs" />

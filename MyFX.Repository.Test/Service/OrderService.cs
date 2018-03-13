@@ -6,6 +6,8 @@
 ****************************************************************************************/
 
 using MyFX.Core.BaseModel.Paging;
+using MyFX.Core.BaseModel.Request;
+using MyFX.Core.BaseModel.Result;
 using MyFX.Core.Domain.Uow;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
@@ -45,6 +47,12 @@ namespace MyFX.Repository.Test.Service
         public FindOrdersResult FindOrders(FindOrdersRequest request)
         {
             var core = new FindOrdersCore(request, _orderRepository);
+            return core.DoExecute();
+        }
+
+        public PageResultObject<Order> FindOrdersToPage(PageRequestBase request)
+        {
+            var core = new FindOrdersToPageCore(request, _orderRepository);
             return core.DoExecute();
         }
     }

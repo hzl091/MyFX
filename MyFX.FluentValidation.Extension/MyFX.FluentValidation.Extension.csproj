@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonValidators\PageRequestBaseValidator.cs" />
     <Compile Include="CustomerValidatorExtensions.cs" />
     <Compile Include="EntityValidatorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
