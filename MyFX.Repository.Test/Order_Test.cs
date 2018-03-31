@@ -44,32 +44,9 @@ namespace MyFX.Repository.Test
             var ci = GetContainer();
             var uow = ci.Resolve<IUnitOfWorkFactory>().Create();
             IOrderRepository rep = ci.Resolve<IOrderRepository>();
-            var order = new Order()
-            {
-                OrderNo = "6999999999999",
-                CustomerId = 9986755,
-                OrderStatus = 80,
-                OrderType = 10,
-                StoreId = 7788,
-                StoreOwnerId = 9900
-            };
+            var order = Order.Create("6999999999999", 9986755, 80, 10, 7788, 9900);
             rep.Add(order);
-
-            EventBus.Publish(new OrderCreatedEvent()
-            {
-                OrderNo = order.OrderNo,
-                CustomerName = "zzzz",
-                Email = "hzl091@126.com"
-            });
-
             order.Cancel("无货");
-            EventBus.Publish(new OrderCanceledEvent()
-            {
-                OrderNo = order.OrderNo,
-                CustomerName = "zzzz",
-                Reason = "无货"
-            });
-
             uow.Commit();
         }
 
