@@ -10,6 +10,8 @@ namespace MyFX.Core.DI
     public static class DIBootstrapper
     {
         private static DIContainer _container;
+        private static readonly object _lockObj = new object();
+        private static IContainer _autofaContainer;
 
         /// <summary>
         /// DI容器
@@ -43,13 +45,18 @@ namespace MyFX.Core.DI
         /// <returns></returns>
         public static IContainer Initialise(Action<ContainerBuilder> register, params string[] assemblyStrings)
         {
-            var length = assemblyStrings.Length;
-            Assembly[] assemblies = new Assembly[length];
-            for (int i = 0; i < length; i++)
+            Func<IContainer> buildContainerAct = () =>
             {
-                assemblies[i] = Assembly.Load(assemblyStrings[i]);
-            }
-            return Initialise(register, assemblies);
+                var length = assemblyStrings.Length;
+                Assembly[] assemblies = new Assembly[length];
+                for (int i = 0; i < length; i++)
+                {
+                    assemblies[i] = Assembly.Load(assemblyStrings[i]);
+                }
+                return BuildContainer(register, assemblies);
+            };
+
+           return BuildGlobalContainer(buildContainerAct);
         }
 
         /// <summary>
@@ -58,7 +65,7 @@ namespace MyFX.Core.DI
         /// <param name="assemblies">注册程序集类型</param>
         public static IContainer Initialise(params Assembly[] assemblies)
         {
-            return Initialise(null, assemblies);
+            return BuildGlobalContainer(() => BuildContainer(null, assemblies));
         }
         /// <summary>
         /// 初始化DI容器
@@ -67,6 +74,17 @@ namespace MyFX.Core.DI
         /// MVC写法:x=>x.RegisterControllers(Assembly.GetExecutingAssembly())</param>
         /// <param name="assemblies">注册程序集类型</param>
         public static IContainer Initialise(Action<ContainerBuilder> register, params Assembly[] assemblies)
+        {
+            return BuildGlobalContainer(() => BuildContainer(register, assemblies));
+        }
+
+        /// <summary>
+        /// 容器构建
+        /// </summary> 
+        /// <param name="register">需注册的组件:
+        /// MVC写法:x=>x.RegisterControllers(Assembly.GetExecutingAssembly())</param>
+        /// <param name="assemblies">注册程序集类型</param>
+        private static IContainer BuildContainer(Action<ContainerBuilder> register, params Assembly[] assemblies)
         {
             var builder = new ContainerBuilder();
             Type baseType = typeof(IDependency);
@@ -77,11 +95,31 @@ namespace MyFX.Core.DI
             {
                 register(builder);
             }
-       
-            var container = builder.Build();
-            _container = new DIContainer(container);
-            return container;
+
+            _autofaContainer = builder.Build();
+            _container = new DIContainer(_autofaContainer);
+            return _autofaContainer;
         }
 
+        /// <summary>
+        /// 构建单例的全局容器对象
+        /// </summary>
+        /// <param name="buildContainerAct"></param>
+        /// <returns></returns>
+        private static IContainer BuildGlobalContainer(Func<IContainer> buildContainerAct)
+        {
+            if (_container == null)
+            {
+                lock (_lockObj)
+                {
+                    if (_container == null)
+                    {
+                       return buildContainerAct();
+                    }
+                }
+            }
+
+            return _autofaContainer; ;
+        }
     }
 }

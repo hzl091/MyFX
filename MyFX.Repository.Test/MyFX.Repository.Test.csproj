@@ -83,7 +83,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Domain\EventHandlers\SendOrderCanceledEmailHandler.cs" />
     <Compile Include="Domain\EventHandlers\SendOrderReceivedEmailHandler.cs" />
     <Compile Include="Domain\EventHandlers\StorePointMessageHandler.cs" />

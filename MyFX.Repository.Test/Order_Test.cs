@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,6 +10,9 @@ using MyFX.Core.BaseModel.Request;
 using MyFX.Core.DI;
 using MyFX.Core.Domain.Uow;
 using MyFX.Core.Events;
+using MyFX.Core.Logs;
+using MyFX.Log.Log4Net;
+using MyFX.Repository.Ef;
 using MyFX.Repository.Test.DAL;
 using MyFX.Repository.Test.Domain;
 using MyFX.Repository.Test.Domain.Events;
@@ -20,10 +24,25 @@ namespace MyFX.Repository.Test
     [TestClass]
     public class Order_Test
     {
+        private DbContext _dbContext = null;
         private IContainer GetContainer()
         {
-            Bootstrapper.Current.Start();
-            return Bootstrapper.Current.Container;
+            Action<ContainerBuilder> act = builder =>
+            {
+                builder.RegisterType<EFUnitOfWorkFactory>().As<IUnitOfWorkFactory>(); //配置使用的工作单元工厂
+                builder.RegisterType<LogFactory>().As<ILogFactory>(); //配置使用的日志工厂
+            };
+
+            var container = DIBootstrapper.Initialise(act, new string[] { "MyFX.Repository.Test" });
+
+            if (_dbContext == null)
+            {
+                _dbContext = new OracleDbContext();//实例化数据库上下文
+                _dbContext.Database.Log = Console.WriteLine;//sql日志监控配置
+                EFUnitOfWorkFactory.SetObjectContext(() => _dbContext);//数据库上下文与工作单元工厂关联
+            }
+
+            return container;
         }
 
         [TestMethod]
