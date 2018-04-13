@@ -18,14 +18,19 @@ namespace MyFX.Core.BaseModel.Result
         public static readonly int Success = 200;
 
         /// <summary>
-        /// 操作被禁止
-        /// </summary>
-        public static readonly int OperationForbidden = 403;
-
-        /// <summary>
         /// 验证失败
         /// </summary>
         public static readonly int ValidateFailed = 400;
+
+        /// <summary>
+        /// 未授权
+        /// </summary>
+        public static readonly int Unauthorized = 401;
+
+        /// <summary>
+        /// 操作被禁止
+        /// </summary>
+        public static readonly int OperationForbidden = 403;
 
         /// <summary>
         /// 资源未找到

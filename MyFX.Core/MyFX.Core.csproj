@@ -126,6 +126,8 @@
     <Compile Include="Domain\Uow\IUnitOfWork.cs" />
     <Compile Include="Domain\Uow\IUnitOfWorkFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Security\Signature.cs" />
+    <Compile Include="Security\SignatureHeader.cs" />
     <Compile Include="Validations\IValidator.cs" />
     <Compile Include="Validations\ValidateResult.cs" />
     <Compile Include="Validations\ValidateResults.cs" />
