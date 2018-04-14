@@ -14,18 +14,16 @@ namespace MyFX.Repository.Ef
     /// <summary>
     /// 基于EF的工作单元
     /// </summary>
-    public class EFUnitOfWork : IUnitOfWork, IDisposable
-    {
-        public DbContext Context { get; private set; }
+    public abstract class EFUnitOfWork : IUnitOfWork, IDisposable
+    {    
+        public abstract DbContext Context { get; set; }
 
-        public EFUnitOfWork(DbContext context)
+        public virtual void Commit()
         {
-            Context = context;
-            context.Configuration.LazyLoadingEnabled = true;//默认启用数据懒加载
-        }
-
-        public void Commit()
-        {
+            if (Context == null)
+            {
+                throw new InvalidOperationException("DbContext未初始化");
+            }
             Context.SaveChanges();
         }
 

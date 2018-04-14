@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MyFX.Core</RootNamespace>
     <AssemblyName>MyFX.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +47,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +92,10 @@
     <Compile Include="Base\ThrowHelper.cs" />
     <Compile Include="Base\TimeHelper.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="InvokeContext.cs" />
+    <Compile Include="Contexts\IContext.cs" />
+    <Compile Include="Contexts\WebContext.cs" />
+    <Compile Include="Contexts\WindowsContext.cs" />
     <Compile Include="DI\DIBootstrapper.cs" />
     <Compile Include="DI\DIContainer.cs" />
     <Compile Include="DI\IDependency.cs" />
@@ -124,7 +130,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Repositories\IRepository.cs" />
     <Compile Include="Domain\Uow\IUnitOfWork.cs" />
-    <Compile Include="Domain\Uow\IUnitOfWorkFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Security\Signature.cs" />
     <Compile Include="Security\SignatureHeader.cs" />
@@ -133,13 +138,15 @@
     <Compile Include="Validations\ValidateResults.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Caches\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

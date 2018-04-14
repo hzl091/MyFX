@@ -1,26 +1,19 @@
-﻿/****************************************************************************************
- * 文件名：TestDbContext
- * 作者：huangzl
- * 创始时间：2018/1/17 10:20:49
- * 创建说明：
-****************************************************************************************/
-
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using MyFX.Repository.Ef;
 using MyFX.Repository.Test.Domain;
 
 namespace MyFX.Repository.Test.DAL
 {
-    public class OracleDbContext : DbContextBase
+    public class SqlServerDbContext : DbContextBase
     {
         /// <summary>
-        /// OracleDbContext
+        /// SqlServerDbContext
         /// </summary>
-        public OracleDbContext(string name)
+        public SqlServerDbContext(string name)
             : base(name)
         {
-            
+
         }
 
         public DbSet<Order> Orders { get; set; }
@@ -33,7 +26,6 @@ namespace MyFX.Repository.Test.DAL
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.HasDefaultSchema("ITEM");
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<DatabaseGeneratedAttributeConvention>();
 

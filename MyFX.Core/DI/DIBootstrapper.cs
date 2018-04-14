@@ -31,9 +31,9 @@ namespace MyFX.Core.DI
         /// </summary>
         /// <returns></returns>
         /// <param name="assemblyStrings">注册程序集类型的名称</param>
-        public static IContainer Initialise(params string[] assemblyStrings)
+        public static IContainer Initialize(params string[] assemblyStrings)
         {
-            return Initialise(null, assemblyStrings);
+            return Initialize(null, assemblyStrings);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace MyFX.Core.DI
         /// MVC写法:x=>x.RegisterControllers(Assembly.GetExecutingAssembly())</param>
         /// <param name="assemblyStrings">注册程序集类型的名称</param>
         /// <returns></returns>
-        public static IContainer Initialise(Action<ContainerBuilder> register, params string[] assemblyStrings)
+        public static IContainer Initialize(Action<ContainerBuilder> register, params string[] assemblyStrings)
         {
             Func<IContainer> buildContainerAct = () =>
             {
@@ -63,7 +63,7 @@ namespace MyFX.Core.DI
         /// 初始化DI容器
         /// </summary>
         /// <param name="assemblies">注册程序集类型</param>
-        public static IContainer Initialise(params Assembly[] assemblies)
+        public static IContainer Initialize(params Assembly[] assemblies)
         {
             return BuildGlobalContainer(() => BuildContainer(null, assemblies));
         }
@@ -73,7 +73,7 @@ namespace MyFX.Core.DI
         /// <param name="register">需注册的组件:
         /// MVC写法:x=>x.RegisterControllers(Assembly.GetExecutingAssembly())</param>
         /// <param name="assemblies">注册程序集类型</param>
-        public static IContainer Initialise(Action<ContainerBuilder> register, params Assembly[] assemblies)
+        public static IContainer Initialize(Action<ContainerBuilder> register, params Assembly[] assemblies)
         {
             return BuildGlobalContainer(() => BuildContainer(register, assemblies));
         }

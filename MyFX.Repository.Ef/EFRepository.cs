@@ -15,6 +15,7 @@ using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.Domain.Entities;
 using MyFX.Core.Domain.Repositories;
 using MyFX.Core.Domain.Uow;
+using MyFX.Core.DI;
 
 namespace MyFX.Repository.Ef
 {
@@ -29,9 +30,11 @@ namespace MyFX.Repository.Ef
         /// </summary>
         /// <typeparam name="TUnitOfWork"></typeparam>
         /// <returns></returns>
-        public TUnitOfWork GetCurrentUnitOfWork<TUnitOfWork>() where TUnitOfWork : IUnitOfWork
+        public IUnitOfWork GetCurrentUnitOfWork()
         {
-            return (TUnitOfWork)UnitOfWork.Current;
+            var uow = DIBootstrapper.Container.Resolve<IUnitOfWork>();
+            if (uow == null) { throw new InvalidOperationException("UnitOfWork未设置"); }
+            return uow;
         }
 
         /// <summary>
@@ -39,7 +42,7 @@ namespace MyFX.Repository.Ef
         /// </summary>
         public DbContext DbContext 
         {
-            get { return _dbContext ?? (_dbContext = GetCurrentUnitOfWork<EFUnitOfWork>().Context); }
+            get { return _dbContext ?? (_dbContext = ((EFUnitOfWork)GetCurrentUnitOfWork()).Context); }
         }
 
         /// <summary>

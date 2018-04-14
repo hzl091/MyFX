@@ -24,31 +24,22 @@ namespace MyFX.Repository.Test
     [TestClass]
     public class Order_Test
     {
-        private DbContext _dbContext = null;
         private IContainer GetContainer()
         {
             Action<ContainerBuilder> act = builder =>
             {
-                builder.RegisterType<EFUnitOfWorkFactory>().As<IUnitOfWorkFactory>(); //配置使用的工作单元工厂
+                builder.RegisterType<OMSUnitOfWork>().As<IUnitOfWork>(); //配置使用的工作单元工厂
                 builder.RegisterType<LogFactory>().As<ILogFactory>(); //配置使用的日志工厂
             };
 
-            var container = DIBootstrapper.Initialise(act, new string[] { "MyFX.Repository.Test" });
-
-            if (_dbContext == null)
-            {
-                _dbContext = new OracleDbContext();//实例化数据库上下文
-                _dbContext.Database.Log = Console.WriteLine;//sql日志监控配置
-                EFUnitOfWorkFactory.SetObjectContext(() => _dbContext);//数据库上下文与工作单元工厂关联
-            }
-
+            var container = DIBootstrapper.Initialize(act, new string[] { "MyFX.Repository.Test" });
             return container;
         }
 
         [TestMethod]
         public void GetOrders_Test()
         {
-            var ctx = new OracleDbContext();
+            var ctx = new OracleDbContext("OracleDbContext");
             foreach (var order in ctx.Orders)
             {
                 Console.WriteLine(order.OrderNo);
@@ -61,7 +52,7 @@ namespace MyFX.Repository.Test
         public void AddOrders_Test()
         {
             var ci = GetContainer();
-            var uow = ci.Resolve<IUnitOfWorkFactory>().Create();
+            var uow = ci.Resolve<IUnitOfWork>();
             IOrderRepository rep = ci.Resolve<IOrderRepository>();
             var order = Order.Create("6999999999999", 9986755, 80, 10, 7788, 9900);
             rep.Add(order);
@@ -136,7 +127,7 @@ namespace MyFX.Repository.Test
             var ci = GetContainer();
             var orderService = ci.Resolve<IOrderService>();
 
-            var rs = orderService.GetOrder(new GetOrderRequest() { OrderNo = "66666588888" });
+            var rs = orderService.GetOrder(new GetOrderRequest() { OrderNo = "6999999999999" });
             Console.WriteLine(rs.ToJsonString());
             Console.WriteLine(rs.DataBody.CustomerId); 
         }

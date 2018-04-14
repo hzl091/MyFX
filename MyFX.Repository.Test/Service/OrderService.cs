@@ -22,10 +22,10 @@ namespace MyFX.Repository.Test.Service
         private IOrderRepository _orderRepository { get;set; }
         private IUnitOfWork _uow { get; set; }
 
-        public OrderService(IOrderRepository orderRepository, IUnitOfWorkFactory uowFactory)
+        public OrderService(IOrderRepository orderRepository, IUnitOfWork uow)
         {
             _orderRepository = orderRepository;
-            _uow = uowFactory.Create();
+            _uow = uow;
         }
 
         public void CreateOrder(Order order)
