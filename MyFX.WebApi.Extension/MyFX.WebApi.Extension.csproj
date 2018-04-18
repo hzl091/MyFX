@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Config\AppSettings.cs" />
     <Compile Include="Config\AppSettingsConfig.cs" />
+    <Compile Include="Filters\ActionExceptionAttribute.cs" />
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
     <Compile Include="Filters\HttpAuthenticationChallengeContextExtensions.cs" />

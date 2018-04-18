@@ -111,5 +111,16 @@ namespace MyFX.Core.BaseModel.Result
         {
             resultObject.BuildResultObject(ResultObjectCodes.OperationForbidden, msg);
         }
+
+        /// <summary>
+        /// 未授权的操作
+        /// </summary>
+        /// <param name="resultObject"></param>
+        /// <param name="msg"></param>
+        public static void OperationForUnauthorized(this IResultObject resultObject, string msg)
+        {
+            resultObject.BuildResultObject(ResultObjectCodes.Unauthorized, msg);
+        }
+        
     }
 }

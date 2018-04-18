@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
+using MyFX.WebApi.Extension.Filters;
 using Newtonsoft.Json.Serialization;
 
 namespace MyFX.WebApi.Test
@@ -13,7 +14,7 @@ namespace MyFX.WebApi.Test
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            config.Filters.Add(new AuthorizeAttribute());
+            config.Filters.Add(new SignatureAttribute());
             // Web API 路由
             config.MapHttpAttributeRoutes();
 

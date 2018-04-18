@@ -28,7 +28,7 @@ namespace MyFX.Repository.Test
         {
             Action<ContainerBuilder> act = builder =>
             {
-                builder.RegisterType<OMSUnitOfWork>().As<IUnitOfWork>(); //配置使用的工作单元工厂
+                builder.RegisterType<OMSUnitOfWork>().As<IUnitOfWork>(); //配置使用的工作单元
                 builder.RegisterType<LogFactory>().As<ILogFactory>(); //配置使用的日志工厂
             };
 

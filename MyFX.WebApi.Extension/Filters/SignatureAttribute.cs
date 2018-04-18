@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Text;
 using System.Web;
 using System.Web.Http.Filters;
+using MyFX.Core.Base;
+using MyFX.Core.BaseModel.Result;
 using MyFX.Core.Security;
 using MyFX.WebApi.Extension.Config;
 
@@ -28,14 +30,17 @@ namespace MyFX.WebApi.Extension.Filters
             string signature = headers.Contains("signature") ? headers.GetValues("signature").FirstOrDefault() : "";
 
             var signatureHeader = new SignatureHeader(appid, timestamp, nonce, signature);
+            string mediaType = "application/json";
+            ResultObject rs = new ResultObject();
             //判断请求头
             if (!signatureHeader.Verify())
             {
-                // 请求头部不完整
-                actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                rs.OperationForUnauthorized("请求头信息不完整");
+                actionContext.Response = new HttpResponseMessage(HttpStatusCode.OK)
                 {
-                    ReasonPhrase = "请求头部不完整"
+                    Content = new StringContent(rs.ToJsonString(), Encoding.UTF8, mediaType)
                 };
+
                 base.OnActionExecuting(actionContext);
                 return;
             }
@@ -43,9 +48,10 @@ namespace MyFX.WebApi.Extension.Filters
             //判断请求是否过期
             if (IsTimeout(signatureHeader.Timestamp))
             {
+                rs.OperationForUnauthorized("请求已过期");
                 actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized)
                 {
-                    ReasonPhrase = "请求已过期"
+                    Content = new StringContent(rs.ToJsonString(), Encoding.UTF8, mediaType)
                 };
                 base.OnActionExecuting(actionContext);
                 return;
@@ -78,9 +84,10 @@ namespace MyFX.WebApi.Extension.Filters
                     data = GetSignQueryString(form);
                     break;
                 default:
+                    rs.OperationForUnauthorized(string.Format("不允许{0}请求", method));
                     actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized)
                     {
-                        ReasonPhrase = string.Format("不允许{0}请求", method)
+                        Content = new StringContent(rs.ToJsonString(), Encoding.UTF8, mediaType)
                     };
                     base.OnActionExecuting(actionContext);
                     return;
@@ -88,10 +95,11 @@ namespace MyFX.WebApi.Extension.Filters
             // 签名数据（顺序：请求参数 -> 应用id -> 时间戳 -> 随机数）
             var signData = data + signatureHeader.ToString();
             if (!Signature.Verify(signData, secret, signatureHeader.Signature))
-            {// 无效签名
+            {
+                rs.OperationForUnauthorized("无效签名");
                 actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized)
                 {
-                    ReasonPhrase = "无效签名"
+                    Content = new StringContent(rs.ToJsonString(), Encoding.UTF8, mediaType)
                 };
                 base.OnActionExecuting(actionContext);
                 return;
