@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.Web.Http.Filters;
 using MyFX.Core.Base;
 using MyFX.Core.BaseModel.Result;
+using MyFX.Core.Logs;
 
-namespace Wcivy.Core.Http.Filters
+namespace MyFX.WebApi.Extension.Filters
 {
     /// <summary>
     /// 捕获action异常，返回统一请求结果
@@ -20,13 +21,15 @@ namespace Wcivy.Core.Http.Filters
             {
                 string mediaType = "application/json";
                 ResultObject rs = new ResultObject();
-                rs.OperationForUnauthorized("服务器内部错误");
+                rs.ServerException("服务器内部错误");
                 actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.OK)
                 {
                     Content = new StringContent(rs.ToJsonString(), Encoding.UTF8, mediaType)
                 };
 
-                //todo huangzl 记录日志
+                LoggerManager.ErrorLog.Error(actionExecutedContext.Exception.InnerException != null
+                    ? string.Format("服务器内部错误:{0}", actionExecutedContext.Exception.InnerException)
+                    : string.Format("服务器内部错误:{0}", actionExecutedContext.Exception));
             });
         }
     }

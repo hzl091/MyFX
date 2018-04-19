@@ -13,6 +13,7 @@ namespace MyFX.WebApi.Test.Controllers
     public class OrderController : ApiController
     {
         //[OmsJwtAuthentication]
+        [HttpGet]
         public OrderResult Get(string orderno)
         {
             var order = new Order();
@@ -23,6 +24,16 @@ namespace MyFX.WebApi.Test.Controllers
             rs.Wecome = "hello";
             rs.DataBody = order;
             return rs;
+        }
+
+        [HttpGet]
+        public int Divide()
+        {
+            int i = 9;
+            int j = 0;
+            int k = i / j;
+
+            return j;
         }
     }
 
