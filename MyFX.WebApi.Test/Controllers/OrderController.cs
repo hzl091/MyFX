@@ -22,7 +22,7 @@ namespace MyFX.WebApi.Test.Controllers
 
             var rs = new OrderResult();
             rs.Wecome = "hello";
-            rs.DataBody = order;
+            rs.Data = order;
             return rs;
         }
 

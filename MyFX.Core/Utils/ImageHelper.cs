@@ -12,7 +12,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace MyFX.Core.Base
+namespace MyFX.Core.Utils
 {
     /// <summary>
     /// 图片处理工具类
@@ -129,7 +129,7 @@ namespace MyFX.Core.Base
                 File.Copy(newpath, path, true);
                 if (File.Exists(newpath))
                 {
-                    FileHelper.Delete(newpath);
+                    FileHelper.DeleteFile(newpath);
                 }
             }
             return path;
@@ -229,7 +229,7 @@ namespace MyFX.Core.Base
                 File.Copy(newpath, path, true);
                 if (File.Exists(newpath))
                 {
-                    FileHelper.Delete(newpath);
+                    FileHelper.DeleteFile(newpath);
                 }
             }
             return path;

@@ -129,7 +129,7 @@ namespace MyFX.Repository.Test
 
             var rs = orderService.GetOrder(new GetOrderRequest() { OrderNo = "6999999999999" });
             Console.WriteLine(rs.ToJsonString());
-            Console.WriteLine(rs.DataBody.CustomerId); 
+            Console.WriteLine(rs.Data.CustomerId); 
         }
 
         [TestMethod]
@@ -141,12 +141,12 @@ namespace MyFX.Repository.Test
             var rs = orderService.FindOrders(new FindOrdersRequest() {PageIndex = 1, PageSize = 2});
             if (rs.IsOk)
             {
-                var orders = rs.DataBody.Rows;
+                var orders = rs.Data.Rows;
                 foreach (var order in orders)
                 {
                     Console.WriteLine(order.OrderNo);
                 }
-                Console.WriteLine("total:" + rs.DataBody.TotalCount);
+                Console.WriteLine("total:" + rs.Data.TotalCount);
             }
             else
             {

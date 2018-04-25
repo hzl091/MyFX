@@ -36,7 +36,7 @@ namespace MyFX.WCF.Test
             var c = new CompositeType();
             c.StringValue = "hello world";
             rs.Count = 500;
-            rs.DataBody = c;
+            rs.Data = c;
 
             return rs;
         }

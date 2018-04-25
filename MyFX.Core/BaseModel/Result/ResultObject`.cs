@@ -21,18 +21,18 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="dataBody">要返回的业务数据</param>
-        public ResultObject(TBody dataBody) :
+        /// <param name="data">要返回的业务数据</param>
+        public ResultObject(TBody data) :
             this()
         {
-           this.DataBody = dataBody;
+           this.Data = data;
         }
 
         /// <summary>
         /// 返回的业务数据
         /// </summary>
         [JsonProperty(PropertyName = "retBody")]
-        public TBody DataBody { get; set; }
+        public TBody Data { get; set; }
 
     }
 }

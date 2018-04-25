@@ -45,6 +45,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
@@ -83,14 +84,18 @@
     <Compile Include="Base\DateTimeExtension.cs" />
     <Compile Include="Base\DecimalExtension.cs" />
     <Compile Include="Base\EnumExtension.cs" />
-    <Compile Include="Base\FileHelper.cs" />
-    <Compile Include="Base\ImageHelper.cs" />
+    <Compile Include="Utils\FileHelper.cs" />
+    <Compile Include="Utils\ImageHelper.cs" />
     <Compile Include="Base\JsonExtensions.cs" />
     <Compile Include="Base\NullableExtensions.cs" />
     <Compile Include="Base\ParamterCheckExtensions.cs" />
     <Compile Include="Base\StringExtension.cs" />
     <Compile Include="Base\ThrowHelper.cs" />
     <Compile Include="Base\TimeHelper.cs" />
+    <Compile Include="Cache\CacheManager.cs" />
+    <Compile Include="Cache\ICacheProviderFactory.cs" />
+    <Compile Include="Cache\ICacheProvider.cs" />
+    <Compile Include="Cache\MemoryCacheProvider.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="InvokeContext.cs" />
     <Compile Include="Contexts\IContext.cs" />
@@ -131,15 +136,24 @@
     <Compile Include="Domain\Repositories\IRepository.cs" />
     <Compile Include="Domain\Uow\IUnitOfWork.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Utils\NetHelper.cs" />
+    <Compile Include="Security\OperatorModel.cs" />
+    <Compile Include="Utils\PasswordGenerator.cs" />
+    <Compile Include="Utils\PinYinUtil.cs" />
+    <Compile Include="Utils\RegexValidateUtil.cs" />
     <Compile Include="Security\Signature.cs" />
     <Compile Include="Security\SignatureHeader.cs" />
+    <Compile Include="Utils\UrlUtil.cs" />
+    <Compile Include="Utils\VerifyCodeUtil.cs" />
+    <Compile Include="Utils\AssemblyUtil.cs" />
+    <Compile Include="Utils\CollectionUtil.cs" />
+    <Compile Include="Utils\DateTimeRangeUtil.cs" />
+    <Compile Include="Utils\DbBackUpAndRestore.cs" />
     <Compile Include="Validations\IValidator.cs" />
     <Compile Include="Validations\ValidateResult.cs" />
     <Compile Include="Validations\ValidateResults.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Caches\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>

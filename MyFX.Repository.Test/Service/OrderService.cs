@@ -39,7 +39,7 @@ namespace MyFX.Repository.Test.Service
         {
             var order = _orderRepository.First(o => o.OrderNo.Equals(request.OrderNo));
             GetOrderResult rs = new GetOrderResult();
-            rs.DataBody = order;
+            rs.Data = order;
 
             return rs;
         }
