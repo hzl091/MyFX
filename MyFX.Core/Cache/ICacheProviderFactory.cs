@@ -1,6 +1,4 @@
-﻿using NFine.Code;
-
-namespace MyFX.Core.Cache
+﻿namespace MyFX.Core.Cache
 {
     /// <summary>
     /// 缓存组件工厂

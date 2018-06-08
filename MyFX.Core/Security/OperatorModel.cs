@@ -1,26 +1,70 @@
-﻿/*******************************************************************************
- * Copyright © 2016 NFine.Framework 版权所有
- * Author: NFine
- * Description: NFine快速开发平台
- * Website：http://www.nfine.cn
-*********************************************************************************/
-using System;
+﻿using System;
 
-namespace NFine.Code
+namespace MyFX.Core.Security
 {
+    /// <summary>
+    /// 操作人
+    /// </summary>
     public class OperatorModel
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string UserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string UserCode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string UserName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string UserPwd { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string CompanyId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string DepartmentId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string RoleId { get; set; }
-        public string LoginIPAddress { get; set; }
-        public string LoginIPAddressName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string LoginIpAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string LoginIpAddressName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string LoginToken { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DateTime LoginTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool IsSystem { get; set; }
     }
 }

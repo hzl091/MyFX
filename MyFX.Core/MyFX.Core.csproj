@@ -84,6 +84,10 @@
     <Compile Include="Base\DateTimeExtension.cs" />
     <Compile Include="Base\DecimalExtension.cs" />
     <Compile Include="Base\EnumExtension.cs" />
+    <Compile Include="Security\Identity.cs" />
+    <Compile Include="Security\UserManager.cs" />
+    <Compile Include="Security\Principal.cs" />
+    <Compile Include="Security\UserInfo.cs" />
     <Compile Include="Utils\FileHelper.cs" />
     <Compile Include="Utils\ImageHelper.cs" />
     <Compile Include="Base\JsonExtensions.cs" />
