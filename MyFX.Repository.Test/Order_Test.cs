@@ -108,6 +108,7 @@ namespace MyFX.Repository.Test
         {
             var ci = GetContainer();
             IOrderRepository rep = ci.Resolve<IOrderRepository>();
+
             bool isExists = rep.Exists(o => o.OrderNo.Equals("66666588888"));
             Console.WriteLine(isExists);
             int total = 0;

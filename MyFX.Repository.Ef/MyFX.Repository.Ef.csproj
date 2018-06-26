@@ -61,15 +61,33 @@
     <Compile Include="DbContextBase.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="EFUnitOfWork.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterCommandInterceptor.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterConstants.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterConvention.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterDefinition.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterExtensions.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterInterceptor.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterParameters.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterQueryVisitor.cs" />
-    <Compile Include="EntityFramework.DynamicFilters\LambdaToDbExpressionVisitor.cs" />
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterCommandInterceptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterInterceptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\DynamicFilterQueryVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityFramework.DynamicFilters\LambdaToDbExpressionVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

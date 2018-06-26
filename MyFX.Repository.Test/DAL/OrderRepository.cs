@@ -16,5 +16,10 @@ namespace MyFX.Repository.Test.DAL
         {
             Console.WriteLine("OrderRepository");
         }
+
+        public override Order GetByKey(int id)
+        {
+            return this.Rs.Find(id);
+        }
     }
 }

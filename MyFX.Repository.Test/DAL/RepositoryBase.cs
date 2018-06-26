@@ -11,7 +11,7 @@ using MyFX.Repository.Ef;
 
 namespace MyFX.Repository.Test.DAL
 {
-    public class RepositoryBase<TEntity,TKey> : EFRepository<TEntity, TKey>
+    public abstract class RepositoryBase<TEntity,TKey> : EFRepository<TEntity, TKey>
         where TEntity : EntityBase<TKey>, IAggregateRoot<TKey>
     {
         public RepositoryBase()

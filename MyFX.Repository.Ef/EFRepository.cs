@@ -53,14 +53,7 @@ namespace MyFX.Repository.Ef
             get { return _dbSet ?? (_dbSet = this.DbContext.Set<TEntity>()); }
         }
 
-        public TEntity GetByKey(TKey id)
-        {
-            if (id == null)
-            {
-                throw  new ArgumentNullException("id");
-            }
-            return Rs.FirstOrDefault(e => e.Id.Equals(id));
-        }
+        public abstract TEntity GetByKey(TKey id);
 
         public TEntity Single(Expression<Func<TEntity, bool>> @where)
         {
