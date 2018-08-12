@@ -43,8 +43,8 @@ namespace MyFX.Repository.Test.Service.Core
             rs.PageSize = pageOrders.PageSize;
             rs.PageCount = pageOrders.PageCount;
             rs.PageIndex = pageOrders.PageIndex;
-            rs.TotalCount = pageOrders.TotalCount;
-            rs.List = pageOrders.Rows;
+            rs.Total = pageOrders.TotalCount;
+            rs.Rows = pageOrders.Rows;
             return rs;
         }
     }

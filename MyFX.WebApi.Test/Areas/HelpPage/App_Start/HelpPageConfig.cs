@@ -93,7 +93,7 @@ namespace MyFX.WebApi.Test.Areas.HelpPage
                     Debug.Assert(typeParameters.Length == 1);
 
                     // Create an enumeration to pass as the first parameter to the PageResult<T> constuctor
-                    Type itemsType = typeof(List<>).MakeGenericType(typeParameters);
+                    Type itemsType = typeof(Rows<>).MakeGenericType(typeParameters);
                     object items = sampleGenerator.GetSampleObject(itemsType);
 
                     // Fill in the other information needed to invoke the PageResult<T> constuctor

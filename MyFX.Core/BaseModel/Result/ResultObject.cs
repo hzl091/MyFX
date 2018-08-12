@@ -32,28 +32,28 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 状态码
         /// </summary>
-        [JsonProperty(PropertyName = "retStatus")]
-        public int StatusCode { get; set; }
+        [JsonProperty(PropertyName = "code")]
+        public int Code { get; set; }
 
         /// <summary>
         /// 消息
         /// </summary>
-        [JsonProperty(PropertyName = "retMsg")]
+        [JsonProperty(PropertyName = "msg")]
         public string Message { get; set; }
         
         /// <summary>
         /// 异常时返回的业务数据
         /// </summary>
-        [JsonProperty(PropertyName = "retErrorBody")]
-        public object ErrorBody { get; set; }
+        [JsonProperty(PropertyName = "errorinfo")]
+        public object ErrorInfo { get; set; }
 
         /// <summary>
         /// 是否成功
         /// </summary>
-        [JsonProperty(PropertyName = "isOk")]
+        [JsonProperty(PropertyName = "isok")]
         public bool IsOk
         {
-            get { return StatusCode == ResultObjectCodes.Success; }
+            get { return Code == ResultObjectCodes.Success; }
             set { }
         }
     }

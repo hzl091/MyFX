@@ -165,12 +165,12 @@ namespace MyFX.Repository.Test
             var rs = orderService.FindOrdersToPage(new PageRequestBase() { PageIndex = 1, PageSize = 2 });
             if (rs.IsOk)
             {
-                var orders = rs.List;
+                var orders = rs.Rows;
                 foreach (var order in orders)
                 {
                     Console.WriteLine(order.OrderNo);
                 }
-                Console.WriteLine("total:" + rs.TotalCount);
+                Console.WriteLine("total:" + rs.Total);
             }
             else
             {

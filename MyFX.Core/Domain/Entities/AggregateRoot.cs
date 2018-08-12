@@ -13,6 +13,5 @@ namespace MyFX.Core.Domain.Entities
    /// <typeparam name="TKey">标识</typeparam>
    public abstract class AggregateRoot<TKey> : EntityBase<TKey>, IAggregateRoot<TKey>
    {
-      public virtual int Version { get; set; }
    }
 }

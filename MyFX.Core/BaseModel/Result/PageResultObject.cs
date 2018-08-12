@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace MyFX.Core.BaseModel.Result
 {
@@ -22,36 +23,40 @@ namespace MyFX.Core.BaseModel.Result
         public PageResultObject() 
             : base() { }
 
-        public PageResultObject(int pageIndex, int totalCount, int pageSize)
+        public PageResultObject(int pageIndex, int total, int pageSize)
             : this()
         {
             this.PageIndex = pageIndex;
-            this.TotalCount = totalCount;
+            this.Total = total;
             this.PageSize = pageSize;
         }
         /// <summary>
         /// 页码数
         /// </summary>
+        [JsonProperty(PropertyName = "pageindex")]
         public int PageIndex { get; set; }
 
         /// <summary>
         /// 总条数
         /// </summary>
-        public int TotalCount { get; set; }
+        [JsonProperty(PropertyName = "total")]
+        public int Total { get; set; }
 
         /// <summary>
         /// 每页条数
         /// </summary>
+        [JsonProperty(PropertyName = "pagesize")]
         public int PageSize { get; set; }
 
         /// <summary>
         /// 总页数
         /// </summary>
+        [JsonProperty(PropertyName = "pagecount")]
         public long PageCount
         {
             get
             {
-                return (int)Math.Ceiling((double)this.TotalCount / this.PageSize);
+                return (int)Math.Ceiling((double)this.Total / this.PageSize);
             }
             set { }
         }

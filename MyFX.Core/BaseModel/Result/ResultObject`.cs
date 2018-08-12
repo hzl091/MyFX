@@ -31,7 +31,7 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 返回的业务数据
         /// </summary>
-        [JsonProperty(PropertyName = "retBody")]
+        [JsonProperty(PropertyName = "data")]
         public TBody Data { get; set; }
 
     }

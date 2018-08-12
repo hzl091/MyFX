@@ -11,7 +11,7 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 状态码
         /// </summary>
-        int StatusCode { get; set; }
+        int Code { get; set; }
 
         /// <summary>
         /// 消息
@@ -21,7 +21,7 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 异常时返回的业务数据
         /// </summary>
-        object ErrorBody { get; set; }
+        object ErrorInfo { get; set; }
 
         /// <summary>
         /// 是否成功

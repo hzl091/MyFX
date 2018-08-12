@@ -47,7 +47,6 @@ namespace MyFX.Repository.Test.DAL
             modelBuilder.Entity<Order>().Property(o => o.CustomerId).HasColumnName("CUSTOMERID");
             modelBuilder.Entity<Order>().Property(o => o.OrderType).HasColumnName("ORDERTYPE");
             modelBuilder.Entity<Order>().Property(o => o.OrderStatus).HasColumnName("ORDERSTATUS");
-            modelBuilder.Entity<Order>().Ignore(o => o.Version);
         }
     }
 }

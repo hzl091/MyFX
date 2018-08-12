@@ -20,7 +20,7 @@ namespace MyFX.Core.BaseModel.Result
             if (resultObject == null) { return null; }
             T obj = new T
             {
-                StatusCode = resultObject.StatusCode,
+                Code = resultObject.Code,
                 Message = resultObject.Message
             };
             return obj;
@@ -35,9 +35,9 @@ namespace MyFX.Core.BaseModel.Result
         /// <param name="retErrorBody"></param>
         public static void BuildResultObject(this IResultObject resultObject, int retStatus, string retMsg, object retErrorBody = null)
         {
-            resultObject.StatusCode = retStatus;
+            resultObject.Code = retStatus;
             resultObject.Message = retMsg;
-            resultObject.ErrorBody = retErrorBody;
+            resultObject.ErrorInfo = retErrorBody;
         }
 
 
@@ -46,10 +46,10 @@ namespace MyFX.Core.BaseModel.Result
         /// </summary>
         public static void CheckErrorAndThrowIt(this IResultObject resultObject)
         {
-            if (resultObject.StatusCode != ResultObjectCodes.Success)
+            if (resultObject.Code != ResultObjectCodes.Success)
             {
-                var ex = new MyFXException(resultObject.Message, resultObject.StatusCode.ToString());
-                var dic = resultObject.ErrorBody as IDictionary;
+                var ex = new MyFXException(resultObject.Message, resultObject.Code.ToString());
+                var dic = resultObject.ErrorInfo as IDictionary;
                 if (dic != null && dic.Count > 0)
                 {
                     foreach (DictionaryEntry o in dic)

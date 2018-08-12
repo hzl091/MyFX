@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace MyFX.Core.BaseModel.Result
 {
@@ -19,8 +20,9 @@ namespace MyFX.Core.BaseModel.Result
     public class ListResultObject<T> : ResultObject
     {
         /// <summary>
-        /// 数据对象列表
+        /// 数据行集合
         /// </summary>
-        public IList<T> List { get; set; }
+        [JsonProperty(PropertyName = "rows")]
+        public IList<T> Rows { get; set; }
     }
 }
