@@ -29,6 +29,15 @@ namespace MyFX.Core.BaseModel.Result
         }
 
         /// <summary>
+        /// 返回操作成功结果
+        /// </summary>
+        /// <returns></returns>
+        public static ResultObject Success(TBody data)
+        {
+            return new ResultObject<TBody>(data);
+        }
+
+        /// <summary>
         /// 返回的业务数据
         /// </summary>
         [JsonProperty(PropertyName = "data")]
