@@ -22,11 +22,31 @@ namespace MyFX.Core.BaseModel.Result
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="retStatus">状态码</param>
-        /// <param name="retMsg">消息</param>
-        public ResultObject(int retStatus, string retMsg)
+        /// <param name="code">状态码</param>
+        /// <param name="msg">消息</param>
+        public ResultObject(int code, string msg)
         {
-            this.BuildResultObject(retStatus, retMsg);
+            this.BuildResultObject(code, msg);
+        }
+
+        /// <summary>
+        /// 返回操作成功结果
+        /// </summary>
+        /// <returns></returns>
+        public static ResultObject Success()
+        {
+            return new ResultObject();
+        }
+
+        /// <summary>
+        /// 返回操作失败结果
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public static ResultObject Fail(int code, string msg)
+        {
+            return new ResultObject(code, msg);
         }
 
         /// <summary>

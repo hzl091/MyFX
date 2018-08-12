@@ -61,6 +61,7 @@
     <Compile Include="Actions\ServiceOptionBase.cs" />
     <Compile Include="Actions\TransactionServiceOptionBase.cs" />
     <Compile Include="BaseModel\NameValue.cs" />
+    <Compile Include="BaseModel\Request\DefaultRequest.cs" />
     <Compile Include="BaseModel\Request\PageRequestBase.cs" />
     <Compile Include="BaseModel\Request\PageRequestBaseExtension.cs" />
     <Compile Include="BaseModel\Result\BatchResultObject.cs" />
